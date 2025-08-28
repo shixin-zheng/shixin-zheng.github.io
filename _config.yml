@@ -25,9 +25,9 @@ author:
   avatar           : "profile.png"
   name             : "郑仕欣"
   pronouns         : # example: "she/her"  
-  bio              : "Postdoc Associate"
-  location         : "Earth"
-  employer         : "University of Maryland College Park"
+  bio              : "Postdoc Associate, Department of Mathematics"
+  location         : "2303 Kirwan Hall"
+  employer         : "UMD College Park"
   uri              : # URL
   email            : "siuzheng@umd.edu" 
 
