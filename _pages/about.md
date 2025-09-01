@@ -18,7 +18,6 @@ I am interested in computational optimization, both in developing efficient algo
 
 - **Shandong University**, Jinan, Shandong, China  
   *B.Sc. in Mathematics and Applied Mathematics, Sep 2014 – May 2018*  
-  GPA: 93.75/100, Rank: Top 2 among 109 students  
 
 ---
 
