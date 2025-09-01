@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2025-Fall-teaching-1
 venue: "University of Maryland"
-date: 2025-09
+date: 2025-09-01
 location: "College Park, Maryland"
 ---
 
