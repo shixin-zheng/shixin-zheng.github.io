@@ -6,6 +6,39 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am interested in computational optimization, both in developing efficient algorithms and in analyzing their theoretical guarantees, with applications spanning machine learning, data science, PDE solvers, deep learning. 
 
+I am interested in computational optimization, both in developing efficient algorithms and in analyzing their theoretical guarantees, with applications spanning machine learning, data science, PDE solvers, and deep learning. 
 
+---
+
+## Education
+- **Purdue University**, West Lafayette, IN, USA  
+  *Ph.D. in Applied Mathematics, Sep 2018 – July 2025*  
+  Research Area: Optimization, Riemannian Optimization, Riemannian Sampling, Machine Learning, Eigenvalue Problems  
+
+- **Shandong University**, Jinan, Shandong, China  
+  *B.Sc. in Mathematics and Applied Mathematics, Sep 2014 – May 2018*  
+  GPA: 93.75/100, Rank: Top 2 among 109 students  
+
+---
+
+## Selected Publications & Preprints
+1. **S. Zheng**, W. Huang, B. Vandereycken, and X. Zhang. *Riemannian optimization using three different metrics for Hermitian PSD fixed-rank constraints.*  
+   *Journal of Computational Optimization and Applications*, 2025.  
+   [Springer link](https://link.springer.com/article/10.1007/s10589-025-00687-8)
+
+2. **S. Zheng**, H. Yang, and X. Zhang. *On the convergence of orthogonalization-free conjugate gradient method for extreme eigenvalues of Hermitian matrices: A Riemannian optimization interpretation.*  
+   *Journal of Computational and Applied Mathematics*, 451:116053, 2024.  
+   [ScienceDirect link](https://www.sciencedirect.com/journal/journal-of-computational-and-applied-mathematics/vol/451/suppl/C)
+
+3. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin Monte Carlo schemes for sampling PSD matrices with fixed rank.*  
+   arXiv:2309.04072, 2023. [arXiv link](http://arxiv.org/abs/2309.04072)
+
+4. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin equations for PSD matrices of fixed rank.*  
+   2023 (arXiv available soon).  
+
+5. **S. Zheng**, J. Lu, X. Zhang. *Local convergence of Riemannian gradient descent in solving the ground state of Gross-Pitaevskii eigenvalue problem.*  
+   2024 (arXiv available soon).  
+
+6. **S. Zheng**, X. Zhang, R. Zhang. *Riemannian optimization on stratified sets: convergence of Burer-Monteiro method using a new metric.*  
+   2025 (arXiv available soon).  
