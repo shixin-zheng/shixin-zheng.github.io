@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 <div class="cv-download-links">
-  <a href="{{ '/files/CV.pdf' | relative_url }}" class="btn btn--primary" download="Shixin_Zheng_CV.pdf">
+  <a href="{{ '/files/CV.pdf' | relative_url }}" class="btn btn--primary" download="cv.pdf">
     Download CV as PDF
   </a>
   <a href="{{ '/' | relative_url }}" class="btn btn--inverse">Back to Home</a>
