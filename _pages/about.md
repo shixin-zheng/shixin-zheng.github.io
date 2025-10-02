@@ -13,17 +13,17 @@ My research interests lie in computational optimization, with a focus on both th
 ---
 
 ## Professional Experience
-- **Postdoctoral Associate**, Aug 2025 - Present. 
+- **Postdoctoral Associate**, Aug 2025 - Present   
   *University of Maryland, College Park, MD, USA*
 
 ---
 
 ## Education
-- **Ph.D. in Applied Mathematics**, Sep 2018 – July 2025. 
-  *Purdue University, West Lafayette, IN, USA*. 
-  Research Area: Optimization, Riemannian Optimization, Riemannian Sampling, Machine Learning, Eigenvalue Problems  
+- **Ph.D. in Applied Mathematics**, Sep 2018 – July 2025  
+  *Purdue University, West Lafayette, IN, USA*  
+  Research Area: Optimization, Riemannian Optimization, Riemannian Sampling, Machine Learning, Eigenvalue Problems
 
-- **B.Sc. in Mathematics and Applied Mathematics**, Sep 2014 – May 2018. 
+- **B.Sc. in Mathematics and Applied Mathematics**, Sep 2014 – May 2018  
   *Shandong University, Jinan, Shandong, China*
 
 ---
