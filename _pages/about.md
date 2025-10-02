@@ -6,25 +6,25 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am currently a Postdoctoral Associate at the University of Maryland, College Park, working under the mentorship of Professor [Haizhao Yang](https://sites.google.com/prod/view/haizhaoyang/home). I earned my Ph.D. in Mathematics from Purdue University, where I was advised by Professor [Xiangxiong Zhang](https://www.math.purdue.edu/~zhan1966/).
+I am currently a Postdoctoral Associate at the University of Maryland, College Park, working under the mentorship of Professor {% include extlink.html url="https://sites.google.com/prod/view/haizhaoyang/home" text="Haizhao Yang" %}. I earned my Ph.D. in Mathematics from Purdue University, where I was advised by Professor [Xiangxiong Zhang](https://www.math.purdue.edu/~zhan1966/).
 
 My research interests lie in computational optimization, with a focus on both the development of efficient algorithms and the analysis of their theoretical guarantees. I am particularly interested in applications across machine learning, data science, partial differential equation (PDE) solvers, and deep learning. Currently, my work centers on analyzing flow-based learning dynamics in deep neural networks.
 
 ---
 
 ## Professional Experience
-- **University of Maryland**, College Park, MD, USA  
-  *Postdoctoral Associate, Aug 2025 - Present*  
+- **Postdoctoral Associate**, Aug 2025 - Present
+  *University of Maryland, College Park, MD, USA*
 
 ---
 
 ## Education
-- **Purdue University**, West Lafayette, IN, USA  
-  *Ph.D. in Applied Mathematics, Sep 2018 – July 2025*  
+- **Ph.D. in Applied Mathematics**, Sep 2018 – July 2025
+  *Purdue University, West Lafayette, IN, USA*
   Research Area: Optimization, Riemannian Optimization, Riemannian Sampling, Machine Learning, Eigenvalue Problems  
 
-- **Shandong University**, Jinan, Shandong, China  
-  *B.Sc. in Mathematics and Applied Mathematics, Sep 2014 – May 2018*  
+- **B.Sc. in Mathematics and Applied Mathematics**, Sep 2014 – May 2018
+  *Shandong University, Jinan, Shandong, China* 
 
 ---
 
