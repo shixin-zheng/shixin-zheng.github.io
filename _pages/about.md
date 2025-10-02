@@ -6,9 +6,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
+I am currently a Postdoctoral Associate at the University of Maryland, College Park, working under the mentorship of[Professor Haizhao Yang](https://sites.google.com/prod/view/haizhaoyang/home). I earned my Ph.D. in Mathematics from Purdue University, where I was advised by [Professor Xiangxiong Zhang](https://www.math.purdue.edu/~zhan1966/).
 
-I am interested in computational optimization, both in developing efficient algorithms and in analyzing their theoretical guarantees, with applications spanning machine learning, data science, PDE solvers, and deep learning. 
-
+My research interests lie in computational optimization, with a focus on both the development of efficient algorithms and the analysis of their theoretical guarantees. I am particularly interested in applications across machine learning, data science, partial differential equation (PDE) solvers, and deep learning. Currently, my work centers on analyzing flow-based learning dynamics in deep neural networks.
 ---
 
 ## Education
