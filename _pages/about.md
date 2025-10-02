@@ -12,6 +12,13 @@ My research interests lie in computational optimization, with a focus on both th
 
 ---
 
+## Professional Experience
+
+- **University of Maryland**, College Park, MD, USA
+  *Postdoctoral Associate, Aug 2025 - present*
+
+---
+
 ## Education
 - **Purdue University**, West Lafayette, IN, USA  
   *Ph.D. in Applied Mathematics, Sep 2018 – July 2025*  
