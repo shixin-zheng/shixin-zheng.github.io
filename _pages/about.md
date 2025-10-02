@@ -13,9 +13,8 @@ My research interests lie in computational optimization, with a focus on both th
 ---
 
 ## Professional Experience
-
-- **University of Maryland**, College Park, MD, USA
-  *Postdoctoral Associate, Aug 2025 - present*
+- **University of Maryland**, College Park, MD, USA  
+  *Postdoctoral Associate, Aug 2025 - Present*  
 
 ---
 
