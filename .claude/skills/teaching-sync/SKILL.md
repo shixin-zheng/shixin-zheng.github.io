@@ -29,20 +29,24 @@ Mechanical rebuilds, safe to run unattended:
 
 | changed source | what gets rebuilt |
 | --- | --- |
-| `lectures/typed/**.tex`, `.sty` | the 26 per-lecture PDFs and the combined volume in `files/stat400/notes/`, then the Fall 2026 lecture titles |
-| `syllabus/<term>/schedule-as-taught.csv` | the course YAML under `_data/courses/` |
+| `syllabus/<term>/schedule.csv` | the course YAML under `_data/courses/` — this is the calendar the instructor edits |
+| `lectures/typed/**.tex`, `.sty` | the 26 per-lecture PDFs and the combined volume in `files/stat400/notes/`, plus the titles and readings the CSV leaves blank |
+
+The schedule CSV format is specified in `teaching-src/schedule-format.md`. Until a term has
+one in the teaching library, the website uses its own copy in `teaching-src/schedules/`;
+edits made there are a stopgap, and the teaching library's file wins as soon as it appears.
 
 ## 3. Handle what the script cannot
 
 Anything the script only *reports* needs a human read before it goes live:
 
 - **A syllabus PDF changed or appeared.** Read it (`pdftotext -layout`) and update the
-  facts at the top of `teaching-src/gen_stat400_fall2026.py` — meeting time, room,
-  sections, discussion day, office hours, TAs — plus the exam dates in the schedule
-  skeleton. Then rerun the generator. Once the real syllabus lands, drop `tentative: true`.
+  course facts in `teaching-src/courses.json` — meeting time, room, sections, discussion
+  day, office hours, TAs — and fold any exam-date changes into the schedule CSV. Once the
+  real syllabus lands, drop `tentative: true`.
 - **A new term directory appeared** (e.g. `syllabus/2027-spring/`). That is a new course
-  page: add a generator, a data file, and a `_teaching/<term>-<course>.md` stub, and flip
-  the finished term's `status:` from `current` to `past`.
+  page: add an entry to `teaching-src/courses.json` and a `_teaching/<term>-<course>.md`
+  stub, and flip the finished term's `status` from `current` to `past`.
 - **A new course** under `~/teaching/courses/`. Same pattern; `_data/courses/*.yml` is the
   contract, `_includes/course-schedule.html` renders whatever it finds.
 

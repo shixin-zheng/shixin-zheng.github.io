@@ -15,28 +15,34 @@ Sources are read-only here; nothing is ever written back into ~/teaching.
 
 Watched sources and what they drive:
 
-  typed notes  lectures/typed/**.tex,.sty  ->  files/stat400/notes/*.pdf
-                                               (also refreshes lecture titles in the
-                                                Fall 2026 schedule)
-  as-taught    syllabus/<term>/schedule-as-taught.csv  ->  _data/courses/*.yml
-  syllabus     syllabus/<term>/*.pdf       ->  reported only; needs a human read
+  schedule     syllabus/<term>/schedule.csv  ->  _data/courses/*.yml
+               The editable calendar. Whatever is in the teaching library wins over the
+               copy kept in teaching-src/schedules/.
+  typed notes  lectures/typed/**.tex,.sty   ->  files/stat400/notes/*.pdf, and the
+                                                lecture titles/readings the schedule
+                                                leaves blank
+  as-taught    syllabus/<term>/schedule-as-taught.csv  ->  reported only; the older
+               spreadsheet snapshot format, superseded by schedule.csv
+  syllabus     syllabus/<term>/*.pdf        ->  reported only; needs a human read
 """
 from __future__ import annotations
 
 import argparse
 import hashlib
 import json
+import os
 import pathlib
 import subprocess
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
-TEACHING = pathlib.Path.home() / "teaching"
+TEACHING = pathlib.Path(os.environ.get("TEACHING_ROOT", pathlib.Path.home() / "teaching"))
 STAT400 = TEACHING / "courses/STAT400"
 LOCK = REPO / "teaching-src/sources.lock.json"
 
 # group -> list of source files (missing files are simply absent from the scan)
 GROUPS = {
+    "schedule": sorted(STAT400.glob("syllabus/*/schedule.csv")),
     "typed-notes": sorted(STAT400.glob("lectures/typed/**/*.tex")) +
                    sorted(STAT400.glob("lectures/typed/**/*.sty")),
     "as-taught": sorted(STAT400.glob("syllabus/*/schedule-as-taught.csv")),
@@ -108,8 +114,14 @@ def main() -> int:
                 print(f"  {kind:<8} {f}")
 
     if "syllabus" in changes:
-        print("\nnote: a syllabus PDF moved. Course facts (meeting times, exam dates, grading)\n"
-              "      are not parsed automatically — read it and update the generator by hand.")
+        print("\nnote: a syllabus PDF moved. Course facts (meeting times, room, sections,\n"
+              "      office hours, grading) are not parsed automatically — read it and update\n"
+              "      teaching-src/courses.json by hand.")
+
+    if "as-taught" in changes:
+        print("\nnote: a schedule-as-taught.csv moved. That is the older snapshot format;\n"
+              "      the website reads syllabus/<term>/schedule.csv. Fold the change into the\n"
+              "      schedule.csv for that term, or into teaching-src/schedules/ if there is none.")
 
     if not args.apply:
         print("\n(dry run; pass --apply to rebuild)")
@@ -119,12 +131,10 @@ def main() -> int:
     if "typed-notes" in changes:
         print("rebuilding lecture-note PDFs")
         run([REPO / "teaching-src/build-stat400-notes.sh"])
-        print("refreshing lecture titles in the Fall 2026 schedule")
-        run([sys.executable, REPO / "teaching-src/gen_stat400_fall2026.py"])
 
-    if "as-taught" in changes:
-        print("regenerating schedules from the as-taught tables")
-        run([sys.executable, REPO / "teaching-src/gen_stat400_archives.py"])
+    if changes.keys() & {"schedule", "typed-notes"}:
+        print("regenerating course schedules")
+        run([sys.executable, REPO / "teaching-src/gen_courses.py"])
 
     LOCK.write_text(json.dumps(now, indent=2, sort_keys=True) + "\n")
     print(f"\nupdated {LOCK.relative_to(REPO)}")

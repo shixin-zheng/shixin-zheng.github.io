@@ -1,0 +1,72 @@
+{
+  "stat400-2026-fall": {
+    "csv": "stat400-2026-fall.csv",
+    "source_csv": "courses/STAT400/syllabus/2026-fall/schedule.csv",
+    "link_notes": true,
+    "meta": {
+      "code": "STAT 400 / DATA 400",
+      "name": "Applied Probability and Statistics I",
+      "term": "Fall 2026",
+      "status": "current",
+      "tentative": true,
+      "institution": "University of Maryland",
+      "instructor": "Shixin Zheng",
+      "office": "2303 Kirwan Hall",
+      "email": "siuzheng@umd.edu",
+      "meetings": "TuTh 2:00–3:15 pm (TBD)",
+      "room": "TBD",
+      "sections": "TBD",
+      "discussion": "TBD",
+      "office_hours": "TBD",
+      "ta": "TBD",
+      "elms": "https://elms.umd.edu",
+      "first_day": "2026-08-31",
+      "last_day": "2026-12-11",
+      "finals": "2026-12-14 – 2026-12-21",
+      "textbook": "Lecture notes by J. F. Fernandes and M. D. Gunatilleka; reference text Devore, <em>Probability and Statistics for Engineering and the Sciences</em>, 9th ed.",
+      "notes_pdf": "/files/stat400/notes/stat400-lecture-notes.pdf",
+      "notes_pages": 109
+    },
+    "notes_numbering": true
+  },
+  "stat400-2026-spring": {
+    "csv": "stat400-2026-spring.csv",
+    "source_csv": "courses/STAT400/syllabus/2026-spring/schedule.csv",
+    "link_notes": false,
+    "meta": {
+      "code": "STAT 400 / DATA 400",
+      "name": "Applied Probability and Statistics I",
+      "term": "Spring 2026",
+      "status": "past",
+      "institution": "University of Maryland",
+      "instructor": "Shixin Zheng",
+      "meetings": "TuTh 2:00–3:15 pm, ARM 0126",
+      "sections": "411/412/421/422/431/432",
+      "discussion": "Wednesdays",
+      "ta": "Scott Fullenbaum, Minghan Yu",
+      "lectures_taught": 24,
+      "textbook": "Lecture notes by J. F. Fernandes and M. D. Gunatilleka; reference text Devore, <em>Probability and Statistics for Engineering and the Sciences</em>, 9th ed."
+    },
+    "notes_numbering": false
+  },
+  "stat400-2025-fall": {
+    "csv": "stat400-2025-fall.csv",
+    "source_csv": "courses/STAT400/syllabus/2025-fall/schedule.csv",
+    "link_notes": false,
+    "meta": {
+      "code": "STAT 400 / DATA 400",
+      "name": "Applied Probability and Statistics I",
+      "term": "Fall 2025",
+      "status": "past",
+      "institution": "University of Maryland",
+      "instructor": "Shixin Zheng",
+      "meetings": "TuTh 2:00–3:15 pm, ARM 0126",
+      "sections": "511/512/521/522/531/532",
+      "discussion": "Mondays, MTH 0106",
+      "ta": "Christian Adams, Minghan Yu",
+      "lectures_taught": 26,
+      "textbook": "Lecture notes by J. F. Fernandes and M. D. Gunatilleka; reference text Devore, <em>Probability and Statistics for Engineering and the Sciences</em>, 9th ed."
+    },
+    "notes_numbering": false
+  }
+}

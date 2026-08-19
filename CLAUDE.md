@@ -53,17 +53,28 @@ would run the same script daily via launchd; it is deliberately **not installed*
 
 | piece | role |
 | --- | --- |
-| `_data/courses/*.yml` | one file per course-semester: facts plus the schedule grouped by week. Generated — edit the generator, not the YAML |
-| `teaching-src/gen_stat400_*.py` | build those YAMLs from the typed notes, the as-taught CSV and the syllabus |
+| `~/teaching/courses/<C>/syllabus/<term>/schedule.csv` | **the calendar the instructor edits.** Format: `teaching-src/schedule-format.md`. Wins over anything in this repo |
+| `teaching-src/schedules/*.csv` | this repo's copy of the same table, used only until the teaching library has one for that term |
+| `teaching-src/courses.json` | per-term facts (meeting time, room, sections, TAs, ELMS…) — they change once a semester, so they live here rather than in the CSV |
+| `_data/courses/*.yml` | one file per course-semester, consumed by the templates. Generated — never hand-edit |
+| `teaching-src/gen_courses.py` | CSV + courses.json + typed notes → those YAMLs |
 | `teaching-src/build-stat400-notes.sh` | 26 per-lecture PDFs + combined volume → `files/stat400/notes/` |
 | `_includes/course-schedule.html` | renders any course YAML; the progress/today/due-soon logic is client-side JS so it stays right between builds |
 | `_layouts/course.html`, `_sass/layout/_course.scss` | page shell and styling |
 | `_teaching/<term>-<course>.md` | thin stub: `layout: course` + `course:` key into `_data/courses/` |
 
+A schedule row's `topic` and `reading` may be left blank: they are then filled from the
+typed notes' `\lecture{n}{title}{sections}`, so revising a lecture title in `~/teaching`
+updates the published schedule too. That fallback is gated per course by `notes_numbering`
+in `courses.json` — only Fall 2026 follows the notes' own lecture numbering.
+
 Fall 2026 is marked `tentative: true`: its midterm, homework and quiz dates are inferred
 from the Fall 2025 rhythm, not from a real syllabus. Clear that flag once the syllabus
-exists. Exams, solutions and homework PDFs are deliberately **not** published — only the
-schedule, topics and typed lecture notes.
+exists. `~/teaching/WEBSITE-REQUEST.md` is the standing request to that library's agent to
+own the schedule CSV; it is the only file this repo has ever written there.
+
+Exams, solutions and homework PDFs are deliberately **not** published — only the schedule,
+topics and typed lecture notes.
 
 ## Layout
 
