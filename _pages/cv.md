@@ -5,60 +5,46 @@ permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
+  - /cv-json/
 ---
 
 {% include base_path %}
 
+**[Download CV (PDF)](/files/CV_Shixin_Zheng.pdf)** — last updated August 2026.
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D. in Mathematics, Purdue University, 2018–2025 (degree conferred August 2025)
+  * Dissertation: *Riemannian Optimization Over PSD Fixed-Rank Matrix Constraints and Applications*
+  * Advisor: Prof. Xiangxiong Zhang
+* B.Sc. in Mathematics and Applied Mathematics, Shandong University, 2014–2018
 
-Work experience
+Appointments
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Postdoctoral Associate, Department of Mathematics, University of Maryland, College Park, Aug 2025 – Present
+  * Mentor: Prof. Haizhao Yang
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
+See the [publications list](/) on the home page, or my [Google Scholar profile](https://scholar.google.com/citations?user=SVxyZFkAAAAJ).
+
 Teaching
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
+* Instructor of record, University of Maryland:
+  * STAT 400 / DATA 400 (Applied Probability and Statistics I), Fall 2025
+  * AMSC 460 / CMSC 460 (Computational Methods), Spring 2026
+* Teaching assistant, Purdue University, 2018–2025
+
+Talks
 ======
-* Currently signed in to 43 different slack teams
+* Invited speaker, *Mathematics of Dynamical Systems in Modern Machine Learning*, Brin Mathematics Research Center, University of Maryland, September 9–11, 2026
+* Poster, *New Trends in Scientific Computing*, IPAM, UCLA, April 2022
+
+Service
+======
+* Reviewer: *SIAM Journal on Optimization*; *Journal of Computational Physics*; *Applied Mathematical Modelling*; *Journal of Fixed Point Theory and Applications*
+* Co-organizer, Numerical Analysis Seminar, University of Maryland, 2025–26
+
+Honors
+======
+* T.T. Moh Scholarship, Department of Mathematics, Purdue University, 2018–19 and 2023–24

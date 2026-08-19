@@ -8,7 +8,7 @@ redirect_from:
 ---
 I am currently a Postdoctoral Associate at the University of Maryland, College Park, working under the mentorship of Professor [Haizhao Yang](https://sites.google.com/prod/view/haizhaoyang/home). I earned my Ph.D. in Mathematics from Purdue University, where I was advised by Professor [Xiangxiong Zhang](https://www.math.purdue.edu/~zhan1966/). 
 
-My research interests lie in computational optimization, with a focus on both the development of efficient algorithms and the analysis of their theoretical guarantees. I am particularly interested in applications across machine learning, data science, partial differential equation (PDE) solvers, and deep learning. Currently, my work centers on analyzing flow-based learning dynamics in deep neural networks.
+My research interests lie in computational optimization, with a focus on both the development of efficient algorithms and the analysis of their theoretical guarantees. I am particularly interested in applications across machine learning, data science, partial differential equation (PDE) solvers, and deep learning. Currently, my work centers on convergence theory for neural-network training and the Riemannian geometry of modern training algorithms.
 
 ---
 
@@ -28,23 +28,32 @@ My research interests lie in computational optimization, with a focus on both th
 
 ---
 
-## Selected Publications & Preprints
+## Publications & Preprints
+
+**Journal articles**
+
 1. **S. Zheng**, W. Huang, B. Vandereycken, and X. Zhang. *Riemannian optimization using three different metrics for Hermitian PSD fixed-rank constraints.*  
-   *Journal of Computational Optimization and Applications*, 2025.  
-   [Springer link](https://link.springer.com/article/10.1007/s10589-025-00687-8)
+   *Computational Optimization and Applications*, 91(3):1135–1184, 2025.  
+   [journal](https://doi.org/10.1007/s10589-025-00687-8) / [arXiv:2204.07830](https://arxiv.org/abs/2204.07830)
 
 2. **S. Zheng**, H. Yang, and X. Zhang. *On the convergence of orthogonalization-free conjugate gradient method for extreme eigenvalues of Hermitian matrices: A Riemannian optimization interpretation.*  
    *Journal of Computational and Applied Mathematics*, 451:116053, 2024.  
-   [ScienceDirect link](https://www.sciencedirect.com/journal/journal-of-computational-and-applied-mathematics/vol/451/suppl/C)
+   [journal](https://doi.org/10.1016/j.cam.2024.116053) / [arXiv:2302.04974](https://arxiv.org/abs/2302.04974)
 
-3. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin Monte Carlo schemes for sampling PSD matrices with fixed rank.*  
-   arXiv:2309.04072, 2023. [arXiv link](http://arxiv.org/abs/2309.04072)
+**Preprints**
 
-4. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin equations for PSD matrices of fixed rank.*  
-   2023 (arXiv available soon).  
+3. **S. Zheng**, Y. Wang, and H. Yang. *Global Convergence and Error Propagation in Neural Gradient Flows: A Riemannian Optimization Framework.*  
+   [arXiv:2605.27779](https://arxiv.org/abs/2605.27779), 2026. Under review.
 
-5. **S. Zheng**, J. Lu, X. Zhang. *Local convergence of Riemannian gradient descent in solving the ground state of Gross-Pitaevskii eigenvalue problem.*  
-   2024 (arXiv available soon).  
+4. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin Monte Carlo schemes for sampling PSD matrices with fixed rank.*  
+   [arXiv:2309.04072](https://arxiv.org/abs/2309.04072), 2023.
 
-6. **S. Zheng**, X. Zhang, R. Zhang. *Riemannian optimization on stratified sets: convergence of Burer-Monteiro method using a new metric.*  
-   2025 (arXiv available soon).  
+**In preparation**
+
+5. **S. Zheng**, X. Zhang, and R. Y. Zhang. *Preconditioned gradient descent for asymmetric low-rank recovery beyond restricted isometry.*
+
+6. **S. Zheng**, J. Lu, and X. Zhang. *On the local convergence of fully discretized Riemannian gradient flow for the Gross–Pitaevskii eigenvalue problem.*
+
+7. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin equations for PSD matrices of fixed rank.*
+
+8. J. Li, **S. Zheng**, and X. Zhang. *Global Convergence of an Efficient Splitting Method for the Defocusing Gross–Pitaevskii Ground State Problem.*
