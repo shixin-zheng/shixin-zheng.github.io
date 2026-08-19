@@ -1,0 +1,85 @@
+{% comment %}
+Compact "what's happening in class right now" strip for the home page. Renders the course
+whose status is `current` in _data/courses/, and fills in the live line (next class, week,
+progress) in the browser so it stays right between builds. Renders nothing when no course
+is current.
+{% endcomment %}
+
+{% assign current_key = '' %}
+{% for pair in site.data.courses %}
+  {% if pair[1].status == 'current' and current_key == '' %}{% assign current_key = pair[0] %}{% endif %}
+{% endfor %}
+
+{% if current_key != '' %}
+  {% assign c = site.data.courses[current_key] %}
+  {% assign entry = site.teaching | where: 'course', current_key | first %}
+
+<aside class="course-banner" data-course-banner>
+  <div class="course-banner__row">
+    <span class="course-banner__term">{{ c.term }}</span>
+    <a class="course-banner__course" href="{{ entry.url | default: '/teaching/' }}">{{ c.code }} &middot; {{ c.name }}</a>
+  </div>
+  <p class="course-banner__live" data-banner-live>
+    <a href="{{ entry.url | default: '/teaching/' }}">See the course schedule</a>
+  </p>
+  <div class="course-banner__track"><span class="course-banner__fill" data-banner-fill></span></div>
+</aside>
+
+<script type="application/json" id="course-banner-data">
+[
+{% for w in c.schedule %}{% for m in w.meetings %}{"d":"{{ m.date | date: '%Y-%m-%d' }}","w":{{ w.week }},"k":"{{ m.kind }}","n":"{{ m.lecture }}","t":{{ m.title | jsonify }}}{% unless forloop.last and forloop.parentloop.last %},{% endunless %}
+{% endfor %}{% endfor %}
+]
+</script>
+
+<script>
+(function () {
+  var banner = document.querySelector('[data-course-banner]');
+  var raw = document.getElementById('course-banner-data');
+  if (!banner || !raw) return;
+
+  var rows;
+  try { rows = JSON.parse(raw.textContent); } catch (e) { return; }
+  if (!rows.length) return;
+
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var parse = function (s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); };
+  var DAY = 86400000;
+  var link = banner.querySelector('.course-banner__live a');
+  var href = link ? link.getAttribute('href') : '#';
+
+  var teaching = rows.filter(function (r) { return r.k === 'lecture' || r.k === 'review'; });
+  var done = teaching.filter(function (r) { return parse(r.d) < today; }).length;
+  var next = rows.filter(function (r) { return parse(r.d) >= today && r.k !== 'holiday'; })[0];
+  var first = parse(rows[0].d), last = parse(rows[rows.length - 1].d);
+  var weeks = rows.reduce(function (a, r) { return Math.max(a, r.w); }, 0);
+
+  var lead;
+  if (today < first) {
+    var away = Math.round((first - today) / DAY);
+    lead = 'Classes start in ' + away + (away === 1 ? ' day' : ' days');
+  } else if (today > last) {
+    lead = 'Semester complete';
+  } else {
+    lead = 'Week ' + next.w + ' of ' + weeks;
+  }
+
+  var line = lead;
+  if (next) {
+    var d = parse(next.d);
+    var days = Math.round((d - today) / DAY);
+    var when = days === 0 ? 'today' : days === 1 ? 'tomorrow'
+      : d.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+    line += ' · next ' + when;
+    if (next.n) line += ': Lecture ' + next.n + ', ' + next.t;
+    else if (next.k === 'exam' || next.k === 'final') line += ': ' + next.t;
+  }
+
+  banner.querySelector('[data-banner-live]').innerHTML =
+    line + ' · <a href="' + href + '">full schedule</a>';
+  banner.querySelector('[data-banner-fill]').style.width =
+    Math.max(0, Math.min(100, Math.round(done / teaching.length * 100))) + '%';
+})();
+</script>
+{% endif %}
