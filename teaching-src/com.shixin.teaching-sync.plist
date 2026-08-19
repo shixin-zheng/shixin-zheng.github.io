@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Unattended daily teaching sync.
+
+  Runs teaching-src/sync.py at 07:12 every day: if anything under ~/teaching that the
+  website depends on has changed, it rebuilds the lecture-note PDFs and course schedules,
+  commits, and pushes — GitHub Actions redeploys from there.
+
+  Install:
+      cp teaching-src/com.shixin.teaching-sync.plist ~/Library/LaunchAgents/
+      launchctl load ~/Library/LaunchAgents/com.shixin.teaching-sync.plist
+
+  Uninstall:
+      launchctl unload ~/Library/LaunchAgents/com.shixin.teaching-sync.plist
+      rm ~/Library/LaunchAgents/com.shixin.teaching-sync.plist
+
+  Run once by hand:
+      launchctl start com.shixin.teaching-sync
+
+  Log: ~/Library/Logs/teaching-sync.log (every run appends, including the no-op runs).
+
+  Drop the --push argument to rebuild locally and leave the commit for review.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shixin.teaching-sync</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/shixinzheng/academy-webpage/teaching-src/sync.py</string>
+    <string>--apply</string>
+    <string>--push</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/shixinzheng/academy-webpage</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>7</integer>
+    <key>Minute</key><integer>12</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/shixinzheng/Library/Logs/teaching-sync.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/shixinzheng/Library/Logs/teaching-sync.log</string>
+
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>

@@ -33,6 +33,37 @@ based on what helps the petition. Read from it, never edit it. An item present o
 website but absent from the NIW CV (e.g. the Numerical Analysis Seminar co-organizer role)
 is an intentional editorial difference, not a gap to close — do not "sync" the two.
 
+## Teaching: downstream of `~/teaching`
+
+The teaching section is generated, not hand-written. `~/teaching` is the raw material —
+a separate library with its own agent — and, like `~/research/NIW/`, it is **read-only from
+here**. Lecture notes are revised through the semester, so the website has to follow it:
+
+```
+./teaching-src/sync.py                  # what changed at the source?
+./teaching-src/sync.py --apply          # rebuild whatever those sources feed
+./teaching-src/sync.py --apply --push   # ... and publish
+```
+
+The `/teaching-sync` skill (`.claude/skills/teaching-sync/`) is the full routine, including
+the cases the script deliberately leaves to a human (a changed syllabus, a new term, a new
+course). `teaching-src/com.shixin.teaching-sync.plist` runs the same thing daily via
+launchd, if installed.
+
+| piece | role |
+| --- | --- |
+| `_data/courses/*.yml` | one file per course-semester: facts plus the schedule grouped by week. Generated — edit the generator, not the YAML |
+| `teaching-src/gen_stat400_*.py` | build those YAMLs from the typed notes, the as-taught CSV and the syllabus |
+| `teaching-src/build-stat400-notes.sh` | 26 per-lecture PDFs + combined volume → `files/stat400/notes/` |
+| `_includes/course-schedule.html` | renders any course YAML; the progress/today/due-soon logic is client-side JS so it stays right between builds |
+| `_layouts/course.html`, `_sass/layout/_course.scss` | page shell and styling |
+| `_teaching/<term>-<course>.md` | thin stub: `layout: course` + `course:` key into `_data/courses/` |
+
+Fall 2026 is marked `tentative: true`: its midterm, homework and quiz dates are inferred
+from the Fall 2025 rhythm, not from a real syllabus. Clear that flag once the syllabus
+exists. Exams, solutions and homework PDFs are deliberately **not** published — only the
+schedule, topics and typed lecture notes.
+
 ## Layout
 
 - `_pages/about.md` — homepage; also carries the full publication list by hand.
@@ -41,7 +72,8 @@ is an intentional editorial difference, not a gap to close — do not "sync" the
   keys under `publication_category` in `_config.yml` (`manuscripts`, `preprints`,
   `conferences`, `books`); a category not listed there silently disappears from
   `/publications/`.
-- `_talks/`, `_teaching/` — one file per talk / course.
+- `_pages/teaching.html` — course index, built from the `_teaching` collection.
+- `_talks/` — one file per talk.
 - `_config.yml` — identity, social links, collection settings.
 
 Adding a paper means touching **both** `_publications/` and the list in `_pages/about.md`,
