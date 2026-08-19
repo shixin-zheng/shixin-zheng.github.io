@@ -47,8 +47,9 @@ here**. Lecture notes are revised through the semester, so the website has to fo
 
 The `/teaching-sync` skill (`.claude/skills/teaching-sync/`) is the full routine, including
 the cases the script deliberately leaves to a human (a changed syllabus, a new term, a new
-course). `teaching-src/com.shixin.teaching-sync.plist` runs the same thing daily via
-launchd, if installed.
+course). Syncs are **run on request, not on a timer** — the user revises notes in place and
+does not want a background job publishing drafts. `teaching-src/com.shixin.teaching-sync.plist`
+would run the same script daily via launchd; it is deliberately **not installed**.
 
 | piece | role |
 | --- | --- |
