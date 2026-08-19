@@ -18,6 +18,8 @@ Watched sources and what they drive:
   schedule     syllabus/<term>/schedule.csv  ->  _data/courses/*.yml
                The editable calendar. Whatever is in the teaching library wins over the
                copy kept in teaching-src/schedules/.
+  handwritten  lectures/<term>/pdf/Week*-Lec*.pdf  ->  files/stat400/<term>/handwritten/
+               Only for courses that opt in via handwritten_src in courses.json.
   typed notes  lectures/typed/**.tex,.sty   ->  files/stat400/notes/*.pdf, and the
                                                 lecture titles/readings the schedule
                                                 leaves blank
@@ -43,6 +45,7 @@ LOCK = REPO / "teaching-src/sources.lock.json"
 # group -> list of source files (missing files are simply absent from the scan)
 GROUPS = {
     "schedule": sorted(STAT400.glob("syllabus/*/schedule.csv")),
+    "handwritten": sorted(STAT400.glob("lectures/*/pdf/*.pdf")),
     "typed-notes": sorted(STAT400.glob("lectures/typed/**/*.tex")) +
                    sorted(STAT400.glob("lectures/typed/**/*.sty")),
     "as-taught": sorted(STAT400.glob("syllabus/*/schedule-as-taught.csv")),
@@ -129,10 +132,22 @@ def main() -> int:
 
     print()
     if "typed-notes" in changes:
-        print("rebuilding lecture-note PDFs")
-        run([REPO / "teaching-src/build-stat400-notes.sh"])
+        touched = changes["typed-notes"]["added"] + changes["typed-notes"]["changed"]
+        slugs = sorted({pathlib.Path(f).stem for f in touched
+                        if pathlib.Path(f).stem.startswith("lec")})
+        shared = [f for f in touched if pathlib.Path(f).stem in ("main", "preamble")]
+        if shared or not slugs:
+            print("rebuilding every lecture-note PDF (shared source changed)")
+            run([REPO / "teaching-src/build-stat400-notes.sh"])
+        else:
+            print(f"rebuilding lecture-note PDFs: {', '.join(slugs)}")
+            run([REPO / "teaching-src/build-stat400-notes.sh", *slugs])
 
-    if changes.keys() & {"schedule", "typed-notes"}:
+    if "handwritten" in changes:
+        print("publishing handwritten lecture scans")
+        run([sys.executable, REPO / "teaching-src/copy-handwritten.py"])
+
+    if changes.keys() & {"schedule", "typed-notes", "handwritten"}:
         print("regenerating course schedules")
         run([sys.executable, REPO / "teaching-src/gen_courses.py"])
 

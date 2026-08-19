@@ -140,9 +140,15 @@ def build(key: str, spec: dict, lectures: dict[int, tuple[str, str]]) -> pathlib
                 out.append(f"        lecture: {n}")
                 if spec.get("link_notes") and (REPO / f"files/stat400/notes/lec{n:02d}.pdf").exists():
                     out.append(f"        notes: /files/stat400/notes/lec{n:02d}.pdf")
+                hand = spec.get("handwritten_dir")
+                if hand and (REPO / hand.lstrip("/") / f"lec{n:02d}.pdf").exists():
+                    out.append(f"        handwritten: {hand}/lec{n:02d}.pdf")
             out.append(f"        title: {q(title or r['kind'].title())}")
             if reading:
                 out.append(f"        reading: {q('Devore ' + reading)}")
+            # A note on a row that carries no homework is about the meeting itself.
+            if r["note"] and not r["hw"]:
+                out.append(f"        note: {q(r['note'])}")
 
         # Homework and quizzes belong to the week: take the first row that carries them.
         hw = next((r for r in group if r["hw"]), None)

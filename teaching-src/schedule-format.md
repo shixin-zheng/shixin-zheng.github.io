@@ -33,7 +33,7 @@ week,date,kind,lecture,topic,reading,hw,hw_posted,hw_due,quiz,note
 | `hw_posted` | no | `YYYY-MM-DD` |
 | `hw_due` | no | `YYYY-MM-DD`. Drives the "due in N days" flag on the live page |
 | `quiz` | no | free text, e.g. `Quiz 4 · in discussion` |
-| `note` | no | a short caveat shown under the homework, e.g. a moved deadline |
+| `note` | no | a short caveat. On a row carrying `hw` it renders under the homework (e.g. a moved deadline); on any other row it renders under that meeting's topic |
 
 **Rules**
 

@@ -90,9 +90,11 @@ between builds.
               <span class="course-lec__title">{{ m.title }}</span>
               {% if m.reading %}<span class="course-lec__reading">{{ m.reading }}</span>{% endif %}
               {% if m.notes %}<a class="course-lec__notes" href="{{ m.notes }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> notes</a>{% endif %}
+              {% if m.handwritten %}<a class="course-lec__notes" href="{{ m.handwritten }}"><i class="fas fa-pen" aria-hidden="true"></i> handwritten</a>{% endif %}
             {% else %}
               <span class="course-lec__title course-lec__title--{{ m.kind }}">{{ m.title }}</span>
             {% endif %}
+            {% if m.note %}<span class="course-lec__note">{{ m.note }}</span>{% endif %}
           </td>
 
           {% if forloop.first %}

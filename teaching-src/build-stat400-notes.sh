@@ -7,9 +7,18 @@
 # It copies the project to a temp dir, compiles one PDF per lecture plus the
 # combined volume, and drops the results into files/stat400/notes/.
 #
-# Usage: ./teaching-src/build-stat400-notes.sh
+# Usage:
+#   ./teaching-src/build-stat400-notes.sh              # every lecture
+#   ./teaching-src/build-stat400-notes.sh lec11 lec22  # just these, plus the volume
+#
+# SOURCE_DATE_EPOCH is pinned so that unchanged content compiles to byte-identical
+# PDFs. Without it tectonic stamps each build with the current time and every weekly
+# sync would rewrite all 27 files in git for no reason.
+#
 # Requires: tectonic (brew install tectonic)
 set -euo pipefail
+
+export SOURCE_DATE_EPOCH=1767225600   # 2026-01-01T00:00:00Z, arbitrary but fixed
 
 src="${STAT400_TYPED:-$HOME/teaching/courses/STAT400/lectures/typed}"
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -26,7 +35,18 @@ rm -rf "$tmp/typed/out"
 mkdir -p "$out"
 
 cd "$tmp/typed"
-for tex in lectures/lec*.tex; do
+
+if [ "$#" -gt 0 ]; then
+  targets=()
+  for slug in "$@"; do
+    [ -f "lectures/$slug.tex" ] || { echo "no such lecture: $slug" >&2; exit 1; }
+    targets+=("lectures/$slug.tex")
+  done
+else
+  targets=(lectures/lec*.tex)
+fi
+
+for tex in "${targets[@]}"; do
   slug="$(basename "$tex" .tex)"          # lec07
   num="$((10#${slug#lec}))"               # 7
   cat > "wrap-$slug.tex" <<EOF
@@ -44,8 +64,8 @@ EOF
 done
 echo
 
-# Combined volume, straight from main.tex.
+# The combined volume always changes when any lecture does.
 tectonic -X compile main.tex --outdir . >/dev/null 2>&1
 mv main.pdf "$out/stat400-lecture-notes.pdf"
 
-echo "Wrote $(ls "$out"/*.pdf | wc -l | tr -d ' ') PDFs to files/stat400/notes/"
+echo "Rebuilt ${#targets[@]} lecture PDF(s) and the combined volume"

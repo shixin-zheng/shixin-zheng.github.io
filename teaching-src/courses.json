@@ -27,7 +27,9 @@
       "notes_pdf": "/files/stat400/notes/stat400-lecture-notes.pdf",
       "notes_pages": 109
     },
-    "notes_numbering": true
+    "notes_numbering": true,
+    "handwritten_src": "courses/STAT400/lectures/2026-fall/pdf",
+    "handwritten_dir": "/files/stat400/2026-fall/handwritten"
   },
   "stat400-2026-spring": {
     "csv": "stat400-2026-spring.csv",

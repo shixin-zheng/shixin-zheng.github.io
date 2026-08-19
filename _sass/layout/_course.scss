@@ -265,6 +265,14 @@ html[data-theme="dark"] .course {
   color: var(--global-text-color-light);
 }
 
+.course-lec__note {
+  display: block;
+  margin-top: 0.25em;
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--global-text-color-light);
+}
+
 .course-lec__notes {
   display: inline-block;
   margin-top: 0.35em;
