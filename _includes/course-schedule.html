@@ -1,0 +1,233 @@
+{% comment %}
+Renders one course page from _data/courses/<key>.yml, where <key> is page.course.
+The schedule table is grouped by week; week / homework / quiz cells span the week's
+meetings. Progress state (current week, past lectures, next class, due-soon homework)
+is computed in the browser from the data-date attributes, so the page stays correct
+between builds.
+{% endcomment %}
+
+{% assign c = site.data.courses[page.course] %}
+
+<div class="course" data-course data-status="{{ c.status }}">
+
+  <p class="course__eyebrow">
+    {{ c.institution }} &middot; {{ c.term }}
+    {% if c.status == 'past' %}<span class="course__tag">Archived</span>{% endif %}
+  </p>
+
+  {% if c.status == 'current' %}
+  <div class="course-progress" data-progress hidden>
+    <div class="course-progress__head">
+      <span class="course-progress__week" data-progress-week></span>
+      <span class="course-progress__count" data-progress-count></span>
+    </div>
+    <div class="course-progress__track"><span class="course-progress__fill" data-progress-fill></span></div>
+    <p class="course-progress__next" data-progress-next></p>
+  </div>
+  {% endif %}
+
+  <dl class="course-facts">
+    {% if c.meetings %}<div><dt>Lectures</dt><dd>{{ c.meetings }}{% if c.room and c.room != 'TBD' %}, {{ c.room }}{% endif %}</dd></div>{% endif %}
+    {% if c.discussion %}<div><dt>Discussion</dt><dd>{{ c.discussion }}</dd></div>{% endif %}
+    {% if c.sections %}<div><dt>Sections</dt><dd>{{ c.sections }}</dd></div>{% endif %}
+    {% if c.office_hours %}<div><dt>Office hours</dt><dd>{{ c.office_hours }}{% if c.office %} &middot; {{ c.office }}{% endif %}</dd></div>{% endif %}
+    {% if c.ta %}<div><dt>Teaching assistants</dt><dd>{{ c.ta }}</dd></div>{% endif %}
+    {% if c.textbook %}<div><dt>Text</dt><dd>{{ c.textbook }}</dd></div>{% endif %}
+    {% if c.elms %}<div><dt>Coursework</dt><dd>Assignments, grades and announcements live on <a href="{{ c.elms }}">ELMS</a>.</dd></div>{% endif %}
+  </dl>
+
+  {% if c.notes_pdf %}
+  <p class="course-notes-link">
+    <a class="btn btn--course" href="{{ c.notes_pdf }}">
+      <i class="fas fa-file-pdf" aria-hidden="true"></i>
+      Lecture notes, complete volume{% if c.notes_pages %} ({{ c.notes_pages }} pp.){% endif %}
+    </a>
+  </p>
+  {% endif %}
+
+  <h2 class="course__section-title">Schedule</h2>
+  {% if c.tentative %}
+  <p class="course__caveat">
+    Tentative and subject to change. Exam and homework dates are confirmed in the
+    syllabus{% if c.elms %} on <a href="{{ c.elms }}">ELMS</a>{% endif %}, which takes precedence over this page.
+  </p>
+  {% endif %}
+
+  <div class="course-table-wrap">
+    <table class="course-table">
+      <thead>
+        <tr>
+          <th scope="col" class="col-week">Week</th>
+          <th scope="col" class="col-date">Date</th>
+          <th scope="col" class="col-topic">Lecture</th>
+          <th scope="col" class="col-hw">Homework &amp; quiz</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for w in c.schedule %}
+        {% assign rows = w.meetings | size %}
+        {% for m in w.meetings %}
+        <tr class="course-row course-row--{{ m.kind }}"
+            data-date="{{ m.date | date: '%Y-%m-%d' }}"
+            data-kind="{{ m.kind }}"
+            data-week="{{ w.week }}">
+          {% if forloop.first %}
+          <th scope="rowgroup" rowspan="{{ rows }}" class="col-week" data-week-cell="{{ w.week }}">
+            <span class="course-week__n">{{ w.week }}</span>
+            <span class="course-week__span">{{ w.span }}</span>
+          </th>
+          {% endif %}
+
+          <td class="col-date" data-label="Date">
+            <span class="course-date__day">{{ m.day }}</span>
+            <span class="course-date__num">{{ m.date | date: '%b %-d' }}</span>
+            <span class="course-today-chip" hidden>Today</span>
+          </td>
+
+          <td class="col-topic" data-label="Lecture">
+            {% if m.kind == 'lecture' or m.kind == 'review' %}
+              {% if m.lecture %}<span class="course-lec__n">{{ m.lecture }}</span>{% endif %}
+              <span class="course-lec__title">{{ m.title }}</span>
+              {% if m.reading %}<span class="course-lec__reading">{{ m.reading }}</span>{% endif %}
+              {% if m.notes %}<a class="course-lec__notes" href="{{ m.notes }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> notes</a>{% endif %}
+            {% else %}
+              <span class="course-lec__title course-lec__title--{{ m.kind }}">{{ m.title }}</span>
+            {% endif %}
+          </td>
+
+          {% if forloop.first %}
+          <td class="col-hw" rowspan="{{ rows }}" data-label="Homework"
+              {% if w.hw %}data-hw-due="{{ w.hw.due | date: '%Y-%m-%d' }}"{% endif %}>
+            {% if w.hw %}
+              <span class="course-hw__id">{{ w.hw.id }}</span>
+              <span class="course-hw__dates">
+                posted {{ w.hw.posted | date: '%b %-d' }} &middot; due {{ w.hw.due | date: '%b %-d' }}
+              </span>
+              {% if w.hw.note %}<span class="course-hw__note">{{ w.hw.note }}</span>{% endif %}
+              <span class="course-hw__flag" hidden></span>
+            {% else %}
+              <span class="course-dash">no homework</span>
+            {% endif %}
+            {% if w.quiz %}<span class="course-hw__quiz">{{ w.quiz }}</span>{% endif %}
+          </td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="course__footnote">
+    {% if c.first_day %}Classes {{ c.first_day | date: '%B %-d' }} &ndash; {{ c.last_day | date: '%B %-d, %Y' }}.{% endif %}
+    {% if c.finals %} Final exam period {{ c.finals }}.{% endif %}
+  </p>
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector('[data-course]');
+  if (!root) return;
+
+  // Local midnight, so "today" means the student's today.
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var iso = function (d) {
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' +
+           String(d.getDate()).padStart(2, '0');
+  };
+  var parse = function (s) {
+    var p = s.split('-');
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  };
+  var DAY = 86400000;
+  var todayISO = iso(today);
+
+  var rows = Array.prototype.slice.call(root.querySelectorAll('.course-row'));
+  if (!rows.length) return;
+
+  var lectures = rows.filter(function (r) { return r.dataset.kind === 'lecture' || r.dataset.kind === 'review'; });
+  var done = 0, next = null, currentWeek = null;
+
+  rows.forEach(function (row) {
+    var d = parse(row.dataset.date);
+    var meets = row.dataset.kind !== 'holiday';   // a break is not the next class
+    if (d < today) {
+      row.classList.add('is-past');
+      if (row.dataset.kind === 'lecture' || row.dataset.kind === 'review') done++;
+    } else if (row.dataset.date === todayISO) {
+      row.classList.add('is-today');
+      currentWeek = row.dataset.week;
+      var chip = row.querySelector('.course-today-chip');
+      if (chip) chip.hidden = false;
+      if (!next && meets) next = row;
+    } else if (!next && meets) {
+      next = row;
+    }
+  });
+
+  // The current week is the one holding today's class, else the week of the next meeting.
+  if (!currentWeek && next) currentWeek = next.dataset.week;
+  if (currentWeek) {
+    rows.filter(function (r) { return r.dataset.week === currentWeek; })
+        .forEach(function (r) { r.classList.add('is-current-week'); });
+  }
+
+  // Homework: flag anything due in the next week, strike what is past due.
+  root.querySelectorAll('[data-hw-due]').forEach(function (cell) {
+    var due = parse(cell.dataset.hwDue);
+    var days = Math.round((due - today) / DAY);
+    var flag = cell.querySelector('.course-hw__flag');
+    if (days < 0) {
+      cell.classList.add('is-past');
+    } else if (days <= 7 && flag) {
+      flag.textContent = days === 0 ? 'due today' : days === 1 ? 'due tomorrow' : 'due in ' + days + ' days';
+      flag.hidden = false;
+      cell.classList.add('is-due-soon');
+    }
+  });
+
+  var panel = root.querySelector('[data-progress]');
+  if (!panel) return;
+
+  var weeks = Array.prototype.slice.call(root.querySelectorAll('[data-week-cell]'));
+  var totalWeeks = weeks.length;
+  var first = parse(rows[0].dataset.date);
+  var last = parse(rows[rows.length - 1].dataset.date);
+  var pct = Math.max(0, Math.min(100, Math.round(done / lectures.length * 100)));
+
+  var weekEl = panel.querySelector('[data-progress-week]');
+  var countEl = panel.querySelector('[data-progress-count]');
+  var nextEl = panel.querySelector('[data-progress-next]');
+
+  if (today < first) {
+    var away = Math.round((first - today) / DAY);
+    weekEl.textContent = 'Semester starts in ' + away + (away === 1 ? ' day' : ' days');
+    countEl.textContent = lectures.length + ' lectures scheduled';
+  } else if (today > last) {
+    weekEl.textContent = 'Semester complete';
+    countEl.textContent = lectures.length + ' of ' + lectures.length + ' lectures';
+    pct = 100;
+  } else {
+    weekEl.textContent = 'Week ' + currentWeek + ' of ' + totalWeeks;
+    countEl.textContent = done + ' of ' + lectures.length + ' lectures';
+  }
+
+  panel.querySelector('[data-progress-fill]').style.width = pct + '%';
+
+  if (next) {
+    var title = next.querySelector('.course-lec__title');
+    var num = next.querySelector('.course-lec__n');
+    var when = parse(next.dataset.date).toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+    var days = Math.round((parse(next.dataset.date) - today) / DAY);
+    var lead = days === 0 ? 'Today' : days === 1 ? 'Tomorrow' : when;
+    nextEl.textContent = 'Next: ' + lead + (days > 1 ? '' : ' · ' + when) +
+      (num ? ' · Lecture ' + num.textContent : '') +
+      (title ? ' · ' + title.textContent : '');
+  } else {
+    nextEl.textContent = '';
+  }
+
+  panel.hidden = false;
+})();
+</script>

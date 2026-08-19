@@ -1,9 +1,0 @@
----
-title: "Stat 400/Data 400 - Applied Probability and Statistics I"
-collection: teaching
-type: "Undergraduate course"
-permalink: /teaching/2026-Fall-teaching-1
-venue: "University of Maryland"
-date: 2026-09-01
-location: "College Park, Maryland"
----

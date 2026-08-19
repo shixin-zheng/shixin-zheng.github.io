@@ -1,0 +1,41 @@
+{
+  "as-taught": {
+    "courses/STAT400/syllabus/2026-spring/schedule-as-taught.csv": "cbb0bf6be0c8bbcd1220ca6b646a84ab65a92d4aface1db423c13be084c6b0af"
+  },
+  "syllabus": {
+    "courses/STAT400/syllabus/2025-fall/Syllabus STAT400 25Fall.pdf": "5ede0262cc150dafc461f5bd6ead2ec558d54f65c6cf0611d0a54859a90e656b",
+    "courses/STAT400/syllabus/2026-spring/Syllabus STAT400 26Spring.pdf": "32c05bb4648e4bb66563f12f0212a9c916ee28b3da348faf0114f9ac325d7926",
+    "courses/STAT400/syllabus/other-instructors/Stat-400-S25 (was Syllabus-3).pdf": "f4e23c5546a98a3226ac039d237659809da7f77d64430f584a2f1a242071b678",
+    "courses/STAT400/syllabus/other-instructors/Stat400 Spring25 Syllabus.pdf": "60054e53c6b92df57e5ad5edcf9e5cefbd03ab4e7bd20dd7c34566ee3b02f23b"
+  },
+  "typed-notes": {
+    "courses/STAT400/lectures/typed/lectures/lec01.tex": "7c55fdfd600984fdb234a08a6f6f68c351c0d24e179564bbe10f2caf17975e9a",
+    "courses/STAT400/lectures/typed/lectures/lec02.tex": "d0f7c7043e19318a0c5cdf298beecf42057f91db05f8de184beac32e840c0418",
+    "courses/STAT400/lectures/typed/lectures/lec03.tex": "9bd36c99223c985fb22637c3adc74f45e000744af9804df191abf48425e64ca6",
+    "courses/STAT400/lectures/typed/lectures/lec04.tex": "3c08aea8850005196d9db40aee494195dcb39ebeec69eb5d5e074900f73e24cd",
+    "courses/STAT400/lectures/typed/lectures/lec05.tex": "6f656dc20260b31fd547ae28c006ef51836058310b0a7d1e32e67d003ee6271f",
+    "courses/STAT400/lectures/typed/lectures/lec06.tex": "94bdeaca8eabace0af7eb0f86c0b15f1bacf72101ceef6ec04e3ec81874a7570",
+    "courses/STAT400/lectures/typed/lectures/lec07.tex": "51296b633764c83022b8e4ae6d2794f57f8dc5296e163d6b3d21f65e2ba9efb9",
+    "courses/STAT400/lectures/typed/lectures/lec08.tex": "31d05363c76df991f7aa8a3d2bfdd277434f41acf378070a0df55d37dc5aa1f4",
+    "courses/STAT400/lectures/typed/lectures/lec09.tex": "acf27df618b77e23f01ef196ce43f9eb4b59a0653e719f9a5fd226a5f772f51f",
+    "courses/STAT400/lectures/typed/lectures/lec10.tex": "7e2f6770fe9e1247b05bc5b7e0cd97495ed7a78966629e417e8d3be181063e23",
+    "courses/STAT400/lectures/typed/lectures/lec11.tex": "8a6e0a01e8190aecafbbc6744870687a5f92073fbf27d5f7666cca07a76428c9",
+    "courses/STAT400/lectures/typed/lectures/lec12.tex": "ba907fa740ea3f19258a3097643e18516143fa5b2993247481ed4639d68fe1f5",
+    "courses/STAT400/lectures/typed/lectures/lec13.tex": "ac3c074f54b971f86dff73f58444d730663fbe9231e6394bef7057cee8712b44",
+    "courses/STAT400/lectures/typed/lectures/lec14.tex": "1c0113e663dd04aae32ac8d40a1ce745032c3214749cc95692485b8ad373fd18",
+    "courses/STAT400/lectures/typed/lectures/lec15.tex": "faa2d15467eaa78d16ebd6d2082759dc91bd9521f2be06241aae44943160fbd6",
+    "courses/STAT400/lectures/typed/lectures/lec16.tex": "2aacc77ac028d9744015ddcb9635562c882cffdbe55599a0c329ab0d46b59860",
+    "courses/STAT400/lectures/typed/lectures/lec17.tex": "7d2fc143ffa058dec2a4481840bd344e039ac5a205df08c373ba59d12299d396",
+    "courses/STAT400/lectures/typed/lectures/lec18.tex": "19c827288dd0007af1a854bed15debdaa6d82ba8985cbcf2faa56f805a369927",
+    "courses/STAT400/lectures/typed/lectures/lec19.tex": "acbd6f99b2379b54ceb9395f952f98376db77bb75cf69457a423aeed69f502e2",
+    "courses/STAT400/lectures/typed/lectures/lec20.tex": "b4430ad9901f3da11fd81f62bab4de831f255ff54d17a64edfddc35fbc412f33",
+    "courses/STAT400/lectures/typed/lectures/lec21.tex": "63ce944e08f02e8625d23e9463ef71b0fdc9fdc7111f9e5230d259d7ac2ed67e",
+    "courses/STAT400/lectures/typed/lectures/lec22.tex": "ab2297be2e7186127e46e2a2d324a68a48e36ed8cb0e2d571bc3374843cc7a02",
+    "courses/STAT400/lectures/typed/lectures/lec23.tex": "192f9257f82af218f21703cfac568ab0cc45d7ea11b55ab8ee40ae26ef5e072f",
+    "courses/STAT400/lectures/typed/lectures/lec24.tex": "093206ca2cc2b434673bc678769681f4888ab1651f11c70557a09199d615ff6f",
+    "courses/STAT400/lectures/typed/lectures/lec25.tex": "ea0fc6294ad1b099016ecefc5bfccf63401e9cb5bea5cf32205565fa46ce2547",
+    "courses/STAT400/lectures/typed/lectures/lec26.tex": "945458ca340b271e74ca7e2e0cc0c1bbcf60925553c7854a6da0ebf2fd6b796a",
+    "courses/STAT400/lectures/typed/main.tex": "6adcaf0ca2c26c757c41296d799d3d1aebc58f4de9eebaf8cc434c705046e2e2",
+    "courses/STAT400/lectures/typed/preamble.sty": "fc30e5dd5dac8c8f76c921ef173b0c167c2543f305e9c80b12e6f2726c41c9b7"
+  }
+}

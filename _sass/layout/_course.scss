@@ -1,0 +1,450 @@
+/* ==========================================================================
+   COURSE PAGES — facts block, progress panel, schedule table
+   ========================================================================== */
+
+.course {
+  --course-accent: #{$info-color};
+  --course-accent-soft: rgba(47, 127, 147, 0.08);
+  --course-warn: #{$warning-color};
+  --course-warn-soft: rgba(248, 148, 6, 0.1);
+}
+
+html[data-theme="dark"] .course {
+  --course-accent: #4bb8d6;
+  --course-accent-soft: rgba(75, 184, 214, 0.14);
+  --course-warn-soft: rgba(248, 148, 6, 0.16);
+}
+
+.course__eyebrow {
+  margin: 0 0 1em;
+  font-size: $type-size-6;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}
+
+.course__tag {
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0.1em 0.55em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 1em;
+  font-size: 0.9em;
+  letter-spacing: 0.04em;
+}
+
+.course__section-title {
+  margin-top: 1.8em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.course__caveat,
+.course__footnote {
+  font-size: $type-size-6;
+  color: var(--global-text-color-light);
+}
+
+/* -------------------------------------------------------------- facts block */
+
+.course-facts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.15em 1.5em;
+  margin: 0 0 1.2em;
+  padding: 1em 1.2em;
+  border: 1px solid var(--global-border-color);
+  border-radius: $border-radius;
+  background: var(--global-code-background-color);
+
+  @include breakpoint($medium) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  > div {
+    display: flex;
+    gap: 0.6em;
+    padding: 0.3em 0;
+    align-items: baseline;
+  }
+
+  dt {
+    flex: 0 0 8.5em;
+    font-weight: bold;
+    font-size: 0.78em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+  }
+
+  dd {
+    margin: 0;
+    font-size: 0.92em;
+  }
+}
+
+/* ----------------------------------------------------------- progress panel */
+
+.course-progress {
+  margin: 0 0 1.4em;
+  padding: 1em 1.2em;
+  border: 1px solid var(--course-accent);
+  border-radius: $border-radius;
+  background: var(--course-accent-soft);
+}
+
+.course-progress__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1em;
+  margin-bottom: 0.5em;
+}
+
+.course-progress__week {
+  font-size: $type-size-5;
+  font-weight: bold;
+}
+
+.course-progress__count {
+  font-size: $type-size-6;
+  color: var(--global-text-color-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.course-progress__track {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--global-border-color);
+  overflow: hidden;
+}
+
+.course-progress__fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 3px;
+  background: var(--course-accent);
+  transition: width 0.6s ease-out;
+}
+
+.course-progress__next {
+  margin: 0.7em 0 0;
+  font-size: $type-size-6;
+}
+
+.course-notes-link {
+  margin: 0 0 1.2em;
+}
+
+.btn--course {
+  background-color: var(--course-accent);
+  color: #fff;
+
+  &:visited { color: #fff; }
+}
+
+/* ---------------------------------------------------------- schedule table */
+
+.course-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--global-border-color);
+  border-radius: $border-radius;
+}
+
+.course-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  border: 0;
+  font-size: 0.9em;
+
+  thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 0.6em 0.8em;
+    border: 0;
+    border-bottom: 1px solid var(--global-dark-border-color);
+    background: var(--global-thead-color);
+    font-size: 0.78em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  td,
+  tbody th {
+    padding: 0.65em 0.8em;
+    border: 0;
+    border-bottom: 1px solid var(--global-border-color);
+    vertical-align: top;
+    text-align: left;
+    background: transparent;
+  }
+
+  tbody tr:last-child td,
+  tbody tr:last-child th { border-bottom: 0; }
+
+  .col-week {
+    width: 4.5em;
+    border-right: 1px solid var(--global-border-color);
+    white-space: nowrap;
+  }
+
+  .col-date { width: 5.5em; white-space: nowrap; }
+  .col-hw { width: 11em; border-left: 1px solid var(--global-border-color); }
+}
+
+.course-week__n {
+  display: block;
+  font-size: $type-size-4;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.course-week__span {
+  display: block;
+  font-size: 0.8em;
+  color: var(--global-text-color-light);
+}
+
+.course-date__day {
+  display: inline-block;
+  width: 2.2em;
+  color: var(--global-text-color-light);
+}
+
+.course-date__num { font-variant-numeric: tabular-nums; }
+
+.course-today-chip {
+  display: block;
+  margin-top: 0.3em;
+  padding: 0.05em 0.45em;
+  border-radius: 1em;
+  background: var(--course-accent);
+  color: #fff;
+  font-size: 0.75em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.course-lec__n {
+  display: inline-block;
+  min-width: 1.7em;
+  margin-right: 0.5em;
+  padding: 0.05em 0.35em;
+  border: 1px solid var(--global-border-color);
+  border-radius: $border-radius;
+  font-size: 0.8em;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  color: var(--global-text-color-light);
+}
+
+.course-lec__title { font-weight: 600; }
+
+.course-lec__title--exam,
+.course-lec__title--final {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.course-lec__title--holiday {
+  font-weight: normal;
+  font-style: italic;
+  color: var(--global-text-color-light);
+}
+
+.course-lec__reading {
+  display: block;
+  margin-top: 0.15em;
+  font-size: 0.85em;
+  color: var(--global-text-color-light);
+}
+
+.course-lec__notes {
+  display: inline-block;
+  margin-top: 0.35em;
+  font-size: 0.85em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+
+  &:hover { border-bottom-color: currentColor; }
+
+  i { margin-right: 0.25em; }
+}
+
+.course-hw__id {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 0.4em;
+}
+
+.course-hw__dates,
+.course-hw__note {
+  display: block;
+  font-size: 0.85em;
+  color: var(--global-text-color-light);
+}
+
+.course-hw__note { font-style: italic; margin-top: 0.25em; }
+
+.course-hw__quiz {
+  display: block;
+  margin-top: 0.4em;
+  padding-top: 0.4em;
+  border-top: 1px dotted var(--global-border-color);
+  font-size: 0.85em;
+  color: var(--global-text-color-light);
+}
+
+.course-hw__flag {
+  display: inline-block;
+  margin-top: 0.35em;
+  padding: 0.05em 0.5em;
+  border-radius: 1em;
+  background: var(--course-warn-soft);
+  border: 1px solid var(--course-warn);
+  color: var(--global-text-color);
+  font-size: 0.78em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.course-dash { color: var(--global-text-color-light); }
+
+/* -------------------------------------------------------------- row states */
+
+.course-row--exam td,
+.course-row--final td,
+.course-row--exam th,
+.course-row--final th {
+  background: var(--course-warn-soft);
+}
+
+.course-row--holiday td .course-lec__title { opacity: 0.75; }
+
+.course-row.is-past td,
+.course-row.is-past th {
+  color: var(--global-text-color-light);
+}
+
+.course-row.is-past .course-lec__title { font-weight: normal; }
+
+.course-row.is-current-week td,
+.course-row.is-current-week th {
+  background: var(--course-accent-soft);
+}
+
+.course-row.is-current-week .col-week {
+  box-shadow: inset 3px 0 0 var(--course-accent);
+}
+
+.course-row.is-today .col-date { font-weight: bold; }
+
+.col-hw.is-past { color: var(--global-text-color-light); }
+
+/* --------------------------------------------------- stacked on small screens */
+
+@include breakpoint(max-width $medium) {
+  .course-table-wrap { overflow-x: visible; }
+
+  .course-table {
+    thead { display: none; }
+
+    tbody, tr, td, th { display: block; width: auto; }
+
+    tbody tr {
+      padding: 0.2em 0;
+      border-bottom: 1px solid var(--global-border-color);
+    }
+
+    tbody tr:last-child { border-bottom: 0; }
+
+    td, tbody th {
+      border-bottom: 0;
+      padding: 0.25em 0.9em;
+    }
+
+    .col-week {
+      width: auto;
+      border-right: 0;
+      padding-top: 0.8em;
+
+      .course-week__n { display: inline; font-size: $type-size-5; }
+      .course-week__n::before { content: "Week "; font-weight: normal; }
+      .course-week__span { display: inline; margin-left: 0.6em; }
+    }
+
+    .col-hw {
+      width: auto;
+      border-left: 0;
+      padding-bottom: 0.8em;
+    }
+
+    .col-hw::before {
+      content: attr(data-label) ": ";
+      font-size: $type-size-7;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--global-text-color-light);
+    }
+
+    .col-date {
+      width: auto;
+      font-weight: bold;
+    }
+
+    .course-today-chip { display: inline-block; margin-left: 0.5em; }
+
+    .course-row.is-current-week .col-week { box-shadow: none; }
+  }
+}
+
+/* ------------------------------------------------------------ course index */
+
+.course-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2em;
+}
+
+.course-list__item {
+  padding: 1em 0;
+  border-bottom: 1px solid var(--global-border-color);
+
+  &:last-child { border-bottom: 0; }
+}
+
+.course-list__term {
+  display: inline-block;
+  min-width: 8em;
+  font-size: $type-size-6;
+  color: var(--global-text-color-light);
+}
+
+.course-list__title {
+  font-weight: bold;
+  font-size: $type-size-5;
+}
+
+.course-list__meta {
+  display: block;
+  margin-top: 0.2em;
+  font-size: $type-size-6;
+  color: var(--global-text-color-light);
+}
+
+.course-list__live {
+  display: inline-block;
+  margin-left: 0.6em;
+  padding: 0.05em 0.5em;
+  border-radius: 1em;
+  background: var(--global-thead-color);
+  font-size: $type-size-7;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

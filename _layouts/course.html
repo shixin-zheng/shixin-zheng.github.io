@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page page--course" itemscope itemtype="http://schema.org/Course">
+    <meta itemprop="name" content="{{ page.title | strip_html | escape_once }}">
+    <div class="page__inner-wrap">
+      <header>
+        <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
+      </header>
+
+      <section class="page__content" itemprop="text">
+        {% include course-schedule.html %}
+        {{ content }}
+      </section>
+    </div>
+  </article>
+</div>
