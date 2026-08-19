@@ -15,7 +15,7 @@ Content comes from `~/research`, **not** from memory or the web:
 | Site content | Authoritative source |
 | --- | --- |
 | The CV PDF at `/files/CV_Shixin_Zheng.pdf` | `cv-src/CV_Shixin_Zheng.tex` **in this repo** — edit it, then run `./cv-src/build.sh` (needs `tectonic`) |
-| CV facts (education, appointments, publications, funding, service, honors, talks) | `~/research/NIW/CV/CV_Shixin_Zheng_NIW.tex` — the longer CV variant, kept current by the user |
+| CV facts (education, appointments, publications, funding, service, honors, talks) | `~/research/NIW/CV/CV_Shixin_Zheng_NIW.tex` — the longest CV variant; **read-only from here** (see below) |
 | Older CV variant | `~/research/AMSTravelFund/CV_Shixin_Zheng.tex` |
 | Paper titles, abstracts, arXiv numbers | the project's `overleaf/` directory under `~/research/<project>/` |
 | Ongoing / unpublished work | `~/research/<project>/{topics,wiki,meetings}` — treat as private until it is on arXiv |
@@ -26,6 +26,12 @@ workspace/` (e.g. `Riemannian-GPE`, `bm-stratified-opt`, `curse-of-dim`, `imuon-
 
 **Never invent a publication, talk, award, or service item.** If it is not in the CV tex or
 in a paper under `~/research`, ask before putting it on the site.
+
+**`~/research/NIW/` is off limits for writes.** It holds the user's NIW petition materials
+and is maintained by a different agent, which decides for itself what belongs in that CV
+based on what helps the petition. Read from it, never edit it. An item present on the
+website but absent from the NIW CV (e.g. the Numerical Analysis Seminar co-organizer role)
+is an intentional editorial difference, not a gap to close — do not "sync" the two.
 
 ## Layout
 
