@@ -83,7 +83,9 @@ publication_category:
   books:
     title: 'Books'
   manuscripts:
-    title: 'Journal Articles'    
+    title: 'Journal Articles'
+  preprints:
+    title: 'Preprints'
   conferences:
     title: 'Conference Papers'
 
@@ -175,6 +177,7 @@ exclude:
   - CHANGELOG
   - Capfile
   - config
+  - cv-src
   - Dockerfile
   - Gemfile
   - Gruntfile.js
