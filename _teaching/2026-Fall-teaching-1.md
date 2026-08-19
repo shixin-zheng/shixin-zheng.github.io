@@ -1,9 +1,9 @@
 ---
-title: "AMSC 460/CMSC 460 - Computational Methods"
+title: "Stat 400/Data 400 - Applied Probability and Statistics I"
 collection: teaching
 type: "Undergraduate course"
-permalink: /teaching/2026-Spring-teaching-1
+permalink: /teaching/2026-Fall-teaching-1
 venue: "University of Maryland"
-date: 2026-01-26
+date: 2026-09-01
 location: "College Park, Maryland"
 ---

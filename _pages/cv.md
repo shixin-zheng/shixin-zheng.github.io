@@ -31,8 +31,7 @@ See the [publications list](/) on the home page, or my [Google Scholar profile](
 Teaching
 ======
 * Instructor of record, University of Maryland:
-  * STAT 400 / DATA 400 (Applied Probability and Statistics I), Fall 2025
-  * AMSC 460 / CMSC 460 (Computational Methods), Spring 2026
+  * STAT 400 / DATA 400 (Applied Probability and Statistics I), Fall 2025 and Fall 2026
 * Teaching assistant, Purdue University, 2018–2025
 
 Talks
