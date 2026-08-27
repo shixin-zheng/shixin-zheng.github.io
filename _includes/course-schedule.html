@@ -46,10 +46,13 @@ between builds.
   {% endif %}
 
   <h2 class="course__section-title">Schedule</h2>
-  {% if c.tentative or c.topics_as_taught %}
+  {% if c.status == 'current' or c.tentative or c.topics_as_taught %}
   <p class="course__caveat">
-    {% if c.tentative %}Tentative and subject to change. Exam and homework dates are confirmed in the
-    syllabus{% if c.elms %} on <a href="{{ c.elms }}">ELMS</a>{% endif %}, which takes precedence over this page.{% endif %}
+    {% if c.status == 'current' %}<strong>This is the live schedule</strong> &mdash; it is kept in step with the
+    class as the semester runs, so it shows what has actually been taught and what is planned from here.
+    {% if c.elms %}The syllabus on <a href="{{ c.elms }}">ELMS</a> is the tentative version; where the two
+    differ, this page is the current one.{% endif %}{% endif %}
+    {% if c.tentative %}Dates are drafted rather than confirmed, and may still move.{% endif %}
     {% if c.topics_as_taught %}Each lecture's topic and handwritten notes go up after that class.{% endif %}
   </p>
   {% endif %}

@@ -79,10 +79,13 @@ linked (`link_notes: false`), only the combined typed volume above the table. Th
 the generated YAML depend on the day it was built, so `sync.py --apply` regenerates that
 course even when no source moved, and `SCHEDULE_TODAY=YYYY-MM-DD` reproduces any day.
 
-Fall 2026 is marked `tentative: true`: its midterm, homework and quiz dates are inferred
-from the Fall 2025 rhythm, not from a real syllabus. Clear that flag once the syllabus
-exists. `~/teaching/WEBSITE-REQUEST.md` is the standing request to that library's agent to
-own the schedule CSV; it is the only file this repo has ever written there.
+**The schedule of the course in session is live, not a draft.** The CSV in `~/teaching` is
+the calendar as actually taught, and publishing it is the reason the user keeps this site
+at all — a sync that is late is a page that is wrong. The syllabus on ELMS is the
+*tentative* version and does not override it; the page says so. Never re-add
+`tentative: true` to a running term (the flag still works, for a term whose dates really
+are drafted). `~/teaching/WEBSITE-REQUEST.md` is the standing request to that library's
+agent to own the schedule CSV; it is the only file this repo has ever written there.
 
 Exams, solutions and homework PDFs are deliberately **not** published — only the schedule,
 topics and lecture notes.

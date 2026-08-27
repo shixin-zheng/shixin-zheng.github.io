@@ -45,21 +45,22 @@ edits made there are a stopgap, and the teaching library's file wins as soon as 
 
 Anything the script only *reports* needs a human read before it goes live:
 
-- **A syllabus PDF changed or appeared.** Read it (`pdftotext -layout`) and update the
-  course facts in `teaching-src/courses.json` — meeting time, room, sections, discussion
-  day, office hours, TAs — and fold any exam-date changes into the schedule CSV. Once the
-  real syllabus lands, drop `tentative: true`.
+- **A syllabus PDF changed or appeared.** Read it (`pdftotext -layout`) for the course
+  facts — meeting time, room, sections, discussion day, office hours, TAs — and update
+  `teaching-src/courses.json`. Its *dates* are the tentative version and do not win: the
+  schedule CSV is the live calendar. If the two disagree, report the difference to the
+  user; never edit the CSV in `~/teaching` to match.
 - **A new term directory appeared** (e.g. `syllabus/2027-spring/`). That is a new course
   page: add an entry to `teaching-src/courses.json` and a `_teaching/<term>-<course>.md`
   stub, and flip the finished term's `status` from `current` to `past`.
 - **A new course** under `~/teaching/courses/`. Same pattern; `_data/courses/*.yml` is the
   contract, `_includes/course-schedule.html` renders whatever it finds.
 
-The Fall 2026 schedule is drafted, not confirmed — the dates for midterms, homework and
-quizzes were inferred from the Fall 2025 rhythm. Treat any real syllabus as authoritative
-over it. Its meeting time, room, section numbers, discussion times and TA come from the
-Testudo listing the instructor sent on 2026-08-27 and are confirmed; office hours are not
-set yet.
+The Fall 2026 schedule is live: the instructor keeps the CSV in step with the class, and
+this page is where the students read it. That is the reason the site exists as far as they
+are concerned, so treat a stale schedule as a bug, not a chore. Meeting time, room, section
+numbers, discussion times and TA come from the Testudo listing of 2026-08-27; office hours
+are not set yet.
 
 ## 4. Publish
 
