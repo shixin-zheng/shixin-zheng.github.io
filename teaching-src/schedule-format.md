@@ -28,7 +28,7 @@ week,date,kind,lecture,topic,reading,hw,hw_posted,hw_due,quiz,note
 | `kind` | yes | one of `lecture`, `review`, `exam`, `final`, `holiday` |
 | `lecture` | for lectures | lecture number. Also picks the notes PDF (`lec07.pdf` for `7`) |
 | `topic` | no | lecture title. Blank → taken from the typed notes for that lecture number |
-| `reading` | no | Devore sections, e.g. `3.5–3.6`. Blank → taken from the typed notes. Do not write the word "Devore" |
+| `reading` | no | **not published.** The website prints no Devore section numbers; the column is still read, so it can stay in the file as the instructor's own reference |
 | `hw` | no | assignment name, e.g. `HW3`. Put it on any one row of the week; it renders once for the whole week |
 | `hw_posted` | no | `YYYY-MM-DD` |
 | `hw_due` | no | `YYYY-MM-DD`. Drives the "due in N days" flag on the live page |
@@ -43,14 +43,18 @@ week,date,kind,lecture,topic,reading,hw,hw_posted,hw_due,quiz,note
   The final exam is `kind=final`.
 - A review class is `kind=review`, not `exam` — reviews count as lectures in the progress
   bar, exams do not.
-- The topic/reading fallback only applies where the course follows the typed notes' own
-  lecture numbering (currently Fall 2026 only; the flag is `notes_numbering` in
+- The topic fallback only applies where the course follows the typed notes' own lecture
+  numbering (currently Fall 2026 only; the flag is `notes_numbering` in
   `teaching-src/courses.json`). For any other term, write topics out in the CSV.
-- A course marked `topics_as_taught` publishes a lecture's topic and reading only once
-  that class has been taught — before then the row shows the lecture number and
-  "posted after class", whatever this file says. Exams, breaks and `review` sessions are
-  announced ahead of time and are not held back. Fall 2026 works this way, because its
-  lecture notes are handwritten and go up after each class.
+- A course marked `topics_as_taught` publishes a lecture's topic only once that class has
+  been taught — before then the row shows the lecture number and "posted after class",
+  whatever this file says. Exams, breaks and `review` sessions are announced ahead of time
+  and are not held back. Fall 2026 works this way, because its lecture notes are
+  handwritten and go up after each class.
+- Devore section numbers are not published anywhere on the site: they drifted out of step
+  with what is actually taught, and a wrong reading next to a right topic is worse than no
+  reading at all. That includes prose — a `note` naming sections still prints as written,
+  so leave them out of the note text too.
 - Dates are the only thing the live page needs to compute progress. Editing a date moves
   the "current week" highlight; no other change is required.
 
@@ -74,9 +78,9 @@ week,date,kind,lecture,topic,reading,hw,hw_posted,hw_due,quiz,note
 7,2026-10-13,holiday,,Fall Break — no class,,,,,,
 ```
 
-Rows 1–4 leave `topic` and `reading` blank on purpose: the website fills them from the
-typed lecture notes, so revising a lecture title in the notes updates the schedule too —
-for Fall 2026, on the day each of those classes is taught.
+Rows 1–4 leave `topic` blank on purpose: the website fills it from the typed lecture
+notes, so revising a lecture title in the notes updates the schedule too — for Fall 2026,
+on the day each of those classes is taught.
 
 **Publishing**
 

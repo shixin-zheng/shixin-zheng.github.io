@@ -34,7 +34,7 @@ Mechanical rebuilds, safe to run unattended:
 | changed source | what gets rebuilt |
 | --- | --- |
 | `syllabus/<term>/schedule.csv` | the course YAML under `_data/courses/` — this is the calendar the instructor edits |
-| `lectures/typed/**.tex`, `.sty` | the 26 per-lecture PDFs and the combined volume in `files/stat400/notes/`, plus the titles and readings the CSV leaves blank |
+| `lectures/typed/**.tex`, `.sty` | the 26 per-lecture PDFs and the combined volume in `files/stat400/notes/`, plus the lecture titles the CSV leaves blank (titles only — Devore section numbers are never published) |
 | `lectures/<term>/pdf/Week*-Lec*.pdf` | the handwritten scans under `files/stat400/<term>/handwritten/` — the PDF the Fall 2026 schedule links per lecture |
 
 The schedule CSV format is specified in `teaching-src/schedule-format.md`. Until a term has

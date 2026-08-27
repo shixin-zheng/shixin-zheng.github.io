@@ -64,10 +64,15 @@ would run the same script daily via launchd; it is deliberately **not installed*
 | `_layouts/course.html`, `_sass/layout/_course.scss` | page shell and styling |
 | `_teaching/<term>-<course>.md` | thin stub: `layout: course` + `course:` key into `_data/courses/` |
 
-A schedule row's `topic` and `reading` may be left blank: they are then filled from the
-typed notes' `\lecture{n}{title}{sections}`, so revising a lecture title in `~/teaching`
-updates the published schedule too. That fallback is gated per course by `notes_numbering`
-in `courses.json` — only Fall 2026 follows the notes' own lecture numbering.
+A schedule row's `topic` may be left blank: it is then filled from the typed notes'
+`\lecture{n}{title}{sections}`, so revising a lecture title in `~/teaching` updates the
+published schedule too. That fallback is gated per course by `notes_numbering` in
+`courses.json` — only Fall 2026 follows the notes' own lecture numbering.
+
+**Devore section numbers are never published** — not in a schedule row, not in a note. The
+typed notes' sections drifted out of step with what is actually taught, and a stale reading
+beside a correct topic is worse than none; the CSV's `reading` column is read and dropped.
+The textbook line naming the book itself is fine.
 
 **Fall 2026 publishes each lecture as it is taught** (`topics_as_taught: true` in that
 course's `meta`). A class still to come shows its number and "posted after class" —
