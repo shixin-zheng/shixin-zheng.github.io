@@ -72,7 +72,9 @@ is current.
     var when = days === 0 ? 'today' : days === 1 ? 'tomorrow'
       : d.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
     line += ' · next ' + when;
-    if (next.n) line += ': Lecture ' + next.n + ', ' + next.t;
+    // A course that posts its topics as it teaches them has no title for a class still
+    // to come; the lecture number is all there is to say.
+    if (next.n) line += ': Lecture ' + next.n + (next.t ? ', ' + next.t : '');
     else if (next.k === 'exam' || next.k === 'final') line += ': ' + next.t;
   }
 

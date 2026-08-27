@@ -46,6 +46,11 @@ week,date,kind,lecture,topic,reading,hw,hw_posted,hw_due,quiz,note
 - The topic/reading fallback only applies where the course follows the typed notes' own
   lecture numbering (currently Fall 2026 only; the flag is `notes_numbering` in
   `teaching-src/courses.json`). For any other term, write topics out in the CSV.
+- A course marked `topics_as_taught` publishes a lecture's topic and reading only once
+  that class has been taught — before then the row shows the lecture number and
+  "posted after class", whatever this file says. Exams, breaks and `review` sessions are
+  announced ahead of time and are not held back. Fall 2026 works this way, because its
+  lecture notes are handwritten and go up after each class.
 - Dates are the only thing the live page needs to compute progress. Editing a date moves
   the "current week" highlight; no other change is required.
 
@@ -70,7 +75,8 @@ week,date,kind,lecture,topic,reading,hw,hw_posted,hw_due,quiz,note
 ```
 
 Rows 1–4 leave `topic` and `reading` blank on purpose: the website fills them from the
-typed lecture notes, so revising a lecture title in the notes updates the schedule too.
+typed lecture notes, so revising a lecture title in the notes updates the schedule too —
+for Fall 2026, on the day each of those classes is taught.
 
 **Publishing**
 

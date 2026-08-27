@@ -46,10 +46,11 @@ between builds.
   {% endif %}
 
   <h2 class="course__section-title">Schedule</h2>
-  {% if c.tentative %}
+  {% if c.tentative or c.topics_as_taught %}
   <p class="course__caveat">
-    Tentative and subject to change. Exam and homework dates are confirmed in the
-    syllabus{% if c.elms %} on <a href="{{ c.elms }}">ELMS</a>{% endif %}, which takes precedence over this page.
+    {% if c.tentative %}Tentative and subject to change. Exam and homework dates are confirmed in the
+    syllabus{% if c.elms %} on <a href="{{ c.elms }}">ELMS</a>{% endif %}, which takes precedence over this page.{% endif %}
+    {% if c.topics_as_taught %}Each lecture's topic and handwritten notes go up after that class.{% endif %}
   </p>
   {% endif %}
 
@@ -87,7 +88,8 @@ between builds.
           <td class="col-topic" data-label="Lecture">
             {% if m.kind == 'lecture' or m.kind == 'review' %}
               {% if m.lecture %}<span class="course-lec__n">{{ m.lecture }}</span>{% endif %}
-              <span class="course-lec__title">{{ m.title }}</span>
+              {% if m.pending %}<span class="course-lec__pending">posted after class</span>
+              {% else %}<span class="course-lec__title">{{ m.title }}</span>{% endif %}
               {% if m.reading %}<span class="course-lec__reading">{{ m.reading }}</span>{% endif %}
               {% if m.notes %}<a class="course-lec__notes" href="{{ m.notes }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> notes</a>{% endif %}
               {% if m.handwritten %}<a class="course-lec__notes" href="{{ m.handwritten }}"><i class="fas fa-pen" aria-hidden="true"></i> handwritten</a>{% endif %}

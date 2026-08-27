@@ -59,6 +59,7 @@ would run the same script daily via launchd; it is deliberately **not installed*
 | `_data/courses/*.yml` | one file per course-semester, consumed by the templates. Generated — never hand-edit |
 | `teaching-src/gen_courses.py` | CSV + courses.json + typed notes → those YAMLs |
 | `teaching-src/build-stat400-notes.sh` | 26 per-lecture PDFs + combined volume → `files/stat400/notes/` |
+| `teaching-src/copy-handwritten.py` | the instructor's handwritten scans → `files/stat400/<term>/handwritten/`, which is what the Fall 2026 schedule links |
 | `_includes/course-schedule.html` | renders any course YAML; the progress/today/due-soon logic is client-side JS so it stays right between builds |
 | `_layouts/course.html`, `_sass/layout/_course.scss` | page shell and styling |
 | `_teaching/<term>-<course>.md` | thin stub: `layout: course` + `course:` key into `_data/courses/` |
@@ -68,13 +69,23 @@ typed notes' `\lecture{n}{title}{sections}`, so revising a lecture title in `~/t
 updates the published schedule too. That fallback is gated per course by `notes_numbering`
 in `courses.json` — only Fall 2026 follows the notes' own lecture numbering.
 
+**Fall 2026 publishes each lecture as it is taught** (`topics_as_taught: true` in that
+course's `meta`). A class still to come shows its number and "posted after class" —
+no title, no reading — however full the CSV and the typed notes are; exams, breaks and
+review sessions are still announced ahead. The per-lecture PDF in that column is the
+instructor's **handwritten** scan, published by `copy-handwritten.py` once it lands in
+`~/teaching/courses/STAT400/lectures/2026-fall/pdf/`; the typed per-lecture PDFs are not
+linked (`link_notes: false`), only the combined typed volume above the table. This makes
+the generated YAML depend on the day it was built, so `sync.py --apply` regenerates that
+course even when no source moved, and `SCHEDULE_TODAY=YYYY-MM-DD` reproduces any day.
+
 Fall 2026 is marked `tentative: true`: its midterm, homework and quiz dates are inferred
 from the Fall 2025 rhythm, not from a real syllabus. Clear that flag once the syllabus
 exists. `~/teaching/WEBSITE-REQUEST.md` is the standing request to that library's agent to
 own the schedule CSV; it is the only file this repo has ever written there.
 
 Exams, solutions and homework PDFs are deliberately **not** published — only the schedule,
-topics and typed lecture notes.
+topics and lecture notes.
 
 ## Layout
 

@@ -229,6 +229,10 @@ html[data-theme="dark"] .course {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-align: center;
+
+  /* The chip ships hidden and the script reveals it on one row. A `display` of our own
+     outranks the browser's rule for [hidden], so it has to be restated here. */
+  &[hidden] { display: none; }
 }
 
 .course-lec__n {
@@ -245,6 +249,12 @@ html[data-theme="dark"] .course {
 }
 
 .course-lec__title { font-weight: 600; }
+
+/* A lecture whose topic goes up after the class. */
+.course-lec__pending {
+  font-style: italic;
+  color: var(--global-text-color-light);
+}
 
 .course-lec__title--exam,
 .course-lec__title--final {
@@ -320,6 +330,9 @@ html[data-theme="dark"] .course {
   font-size: 0.78em;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+
+  /* Same as the today chip: hidden until the script fills in "due in N days". */
+  &[hidden] { display: none; }
 }
 
 .course-dash { color: var(--global-text-color-light); }

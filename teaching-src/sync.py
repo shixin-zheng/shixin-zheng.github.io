@@ -26,6 +26,10 @@ Watched sources and what they drive:
   as-taught    syllabus/<term>/schedule-as-taught.csv  ->  reported only; the older
                spreadsheet snapshot format, superseded by schedule.csv
   syllabus     syllabus/<term>/*.pdf        ->  reported only; needs a human read
+
+A course marked `topics_as_taught` in courses.json publishes each lecture's topic only
+once that class has been taught, so its schedule goes stale with the calendar rather than
+with the sources. Those courses are regenerated on every --apply, changed sources or not.
 """
 from __future__ import annotations
 
@@ -106,9 +110,18 @@ def main() -> int:
     now, before = scan(), load_lock()
     changes = diff(now, before)
 
-    if not changes:
+    registry = json.loads((REPO / "teaching-src/courses.json").read_text())
+    dated = [key for key, spec in registry.items()
+             if spec["meta"].get("topics_as_taught") and spec["meta"].get("status") == "current"]
+
+    if not changes and not dated:
         print("teaching sources unchanged — nothing to do")
         return 0
+
+    if not changes:
+        print("teaching sources unchanged.\n"
+              f"note: {', '.join(dated)} publishes each lecture's topic after that class,\n"
+              "      so its schedule is rebuilt from today's date.")
 
     for group, d in changes.items():
         print(f"\n{group}:")
@@ -147,7 +160,7 @@ def main() -> int:
         print("publishing handwritten lecture scans")
         run([sys.executable, REPO / "teaching-src/copy-handwritten.py"])
 
-    if changes.keys() & {"schedule", "typed-notes", "handwritten"}:
+    if dated or changes.keys() & {"schedule", "typed-notes", "handwritten"}:
         print("regenerating course schedules")
         run([sys.executable, REPO / "teaching-src/gen_courses.py"])
 
@@ -157,7 +170,7 @@ def main() -> int:
     status = subprocess.run(["git", "status", "--porcelain"], cwd=REPO,
                             capture_output=True, text=True).stdout.strip()
     if not status:
-        print("no output changed (sources moved but rebuilds are byte-identical)")
+        print("no output changed — the rebuilds are byte-identical to what is published")
         return 0
 
     print("\nworking tree:")
@@ -167,10 +180,10 @@ def main() -> int:
         print("\n(pass --push to commit and push)")
         return 0
 
-    groups = ", ".join(sorted(changes))
+    message = (f"Sync teaching materials from ~/teaching ({', '.join(sorted(changes))})"
+               if changes else "Publish the topics of the lectures already taught")
     run(["git", "add", "-A"])
-    run(["git", "commit", "-q", "-m",
-         f"Sync teaching materials from ~/teaching ({groups})"])
+    run(["git", "commit", "-q", "-m", message])
     run(["git", "push", "origin", "master"])
     print("\npushed; GitHub Pages will redeploy in about a minute")
     return 0

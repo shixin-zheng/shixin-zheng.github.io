@@ -16,8 +16,12 @@ from it, build into this repo.
 ```
 
 It compares every watched source against `teaching-src/sources.lock.json` and prints the
-group each change belongs to. "teaching sources unchanged" means stop — there is nothing
-to publish.
+group each change belongs to. "teaching sources unchanged — nothing to do" means stop.
+
+Fall 2026 is the exception: it publishes each lecture's topic only after that class, so
+its schedule goes stale with the calendar, not with the sources. When nothing has moved
+the script says so and rebuilds that course anyway — running a sync after a class is what
+puts the lecture's title, reading and handwritten scan on the page.
 
 ## 2. Rebuild
 
@@ -31,6 +35,7 @@ Mechanical rebuilds, safe to run unattended:
 | --- | --- |
 | `syllabus/<term>/schedule.csv` | the course YAML under `_data/courses/` — this is the calendar the instructor edits |
 | `lectures/typed/**.tex`, `.sty` | the 26 per-lecture PDFs and the combined volume in `files/stat400/notes/`, plus the titles and readings the CSV leaves blank |
+| `lectures/<term>/pdf/Week*-Lec*.pdf` | the handwritten scans under `files/stat400/<term>/handwritten/` — the PDF the Fall 2026 schedule links per lecture |
 
 The schedule CSV format is specified in `teaching-src/schedule-format.md`. Until a term has
 one in the teaching library, the website uses its own copy in `teaching-src/schedules/`;
@@ -52,7 +57,9 @@ Anything the script only *reports* needs a human read before it goes live:
 
 The Fall 2026 schedule is drafted, not confirmed — the dates for midterms, homework and
 quizzes were inferred from the Fall 2025 rhythm. Treat any real syllabus as authoritative
-over it.
+over it. Its meeting time, room, section numbers, discussion times and TA come from the
+Testudo listing the instructor sent on 2026-08-27 and are confirmed; office hours are not
+set yet.
 
 ## 4. Publish
 
