@@ -60,7 +60,7 @@ schedule:
       id: HW1
       posted: 2026-09-11
       due: 2026-09-18
-    quiz: "Quiz 1 · in discussion"
+      note: "No discussion this week — Monday Sept 7 is Labor Day. No quiz."
   - week: 3
     span: "Sep 14 – Sep 20"
     meetings:
@@ -78,7 +78,7 @@ schedule:
       id: HW2
       posted: 2026-09-18
       due: 2026-09-25
-    quiz: "Quiz 2 · in discussion"
+    quiz: "Quiz 1 · in discussion"
   - week: 4
     span: "Sep 21 – Sep 27"
     meetings:
@@ -96,7 +96,7 @@ schedule:
       id: HW3
       posted: 2026-09-25
       due: 2026-10-02
-    quiz: "Quiz 3 · in discussion"
+    quiz: "Quiz 2 · in discussion"
   - week: 5
     span: "Sep 28 – Oct 4"
     meetings:
@@ -114,7 +114,7 @@ schedule:
       id: HW4
       posted: 2026-10-02
       due: 2026-10-09
-    quiz: "Quiz 4 · in discussion"
+    quiz: "Quiz 3 · in discussion"
   - week: 6
     span: "Oct 5 – Oct 11"
     meetings:
@@ -144,7 +144,7 @@ schedule:
       id: HW5
       posted: 2026-10-16
       due: 2026-10-23
-    quiz: "Quiz 5 · in discussion"
+      note: "No discussion this week — Monday Oct 12 is Fall Break. No quiz."
   - week: 8
     span: "Oct 19 – Oct 25"
     meetings:
@@ -162,7 +162,7 @@ schedule:
       id: HW6
       posted: 2026-10-23
       due: 2026-10-30
-    quiz: "Quiz 6 · in discussion"
+    quiz: "Quiz 4 · in discussion"
   - week: 9
     span: "Oct 26 – Nov 1"
     meetings:
@@ -180,57 +180,57 @@ schedule:
       id: HW7
       posted: 2026-10-30
       due: 2026-11-06
-    quiz: "Quiz 7 · in discussion"
+    quiz: "Quiz 5 · in discussion"
   - week: 10
     span: "Nov 2 – Nov 8"
     meetings:
       - date: 2026-11-03
         day: "Tue"
-        kind: review
-        lecture: 17
-        title: "Review for Midterm 2"
-        reading: "Devore Ch. 3.5–4.5"
+        kind: lecture
+        lecture: 18
+        pending: true
       - date: 2026-11-05
         day: "Thu"
-        kind: exam
-        title: "Midterm 2"
+        kind: lecture
+        lecture: 19
+        pending: true
+    quiz: "Quiz 6 · in discussion"
   - week: 11
     span: "Nov 9 – Nov 15"
     meetings:
       - date: 2026-11-10
         day: "Tue"
         kind: lecture
-        lecture: 18
-        pending: true
-      - date: 2026-11-12
-        day: "Thu"
-        kind: lecture
-        lecture: 19
-        pending: true
-    hw:
-      id: HW8
-      posted: 2026-11-13
-      due: 2026-11-20
-    quiz: "Quiz 8 · in discussion"
-  - week: 12
-    span: "Nov 16 – Nov 22"
-    meetings:
-      - date: 2026-11-17
-        day: "Tue"
-        kind: lecture
         lecture: 20
         pending: true
-      - date: 2026-11-19
+      - date: 2026-11-12
         day: "Thu"
         kind: lecture
         lecture: 21
         pending: true
     hw:
+      id: HW8
+      posted: 2026-11-13
+      due: 2026-11-20
+    quiz: "Quiz 7 · in discussion"
+  - week: 12
+    span: "Nov 16 – Nov 22"
+    meetings:
+      - date: 2026-11-17
+        day: "Tue"
+        kind: review
+        lecture: 17
+        title: "Review for Midterm 2"
+        reading: "Devore Ch. 3.5–4.5"
+      - date: 2026-11-19
+        day: "Thu"
+        kind: exam
+        title: "Midterm 2"
+    hw:
       id: HW9
       posted: 2026-11-20
       due: 2026-11-24
-      note: "HW9 is due Tuesday, not Friday — Thanksgiving recess begins Wed Nov 25."
-    quiz: "Quiz 9 · in discussion"
+      note: "Midterm 2 review. Midterm 2 covers only through Lecture 19 (joint distributions, covariance, correlation — Devore 3.5–5.2); the statistics in Lectures 20–21 is taught first but is not on it. No quiz — Midterm 2 week. HW9 is due Tuesday, not Friday — Thanksgiving recess begins Wed Nov 25."
   - week: 13
     span: "Nov 23 – Nov 29"
     meetings:
@@ -239,10 +239,12 @@ schedule:
         kind: lecture
         lecture: 22
         pending: true
+        note: "Remote class — no in-person meeting; recorded lecture posted to ELMS. Monday 11/23 discussion meets as usual."
       - date: 2026-11-26
         day: "Thu"
         kind: holiday
         title: "Thanksgiving — no class"
+    quiz: "Quiz 8 · in discussion"
   - week: 14
     span: "Nov 30 – Dec 6"
     meetings:
@@ -260,7 +262,7 @@ schedule:
       id: HW10
       posted: 2026-12-04
       due: 2026-12-11
-    quiz: "Quiz 10 · in discussion"
+    quiz: "Quiz 9 · in discussion"
   - week: 15
     span: "Dec 7 – Dec 13"
     meetings:
@@ -271,9 +273,11 @@ schedule:
         pending: true
       - date: 2026-12-10
         day: "Thu"
-        kind: lecture
+        kind: review
         lecture: 26
-        pending: true
+        title: "Review for the Final Exam"
+        reading: "Devore Ch. 2–6"
+    quiz: "Quiz 10 · in discussion"
   - week: 16
     span: "Dec 14 – Dec 20"
     meetings:
