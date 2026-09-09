@@ -36,12 +36,14 @@ schedule:
         day: "Tue"
         kind: lecture
         lecture: 1
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec01.pdf
+        title: "Introduction to the course; the flu-test problem"
       - date: 2026-09-03
         day: "Thu"
         kind: lecture
         lecture: 2
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec02.pdf
+        title: "Motivating examples; sets, set operations, De Morgan's laws, cardinality"
   - week: 2
     span: "Sep 7 – Sep 13"
     meetings:
@@ -49,7 +51,8 @@ schedule:
         day: "Tue"
         kind: lecture
         lecture: 3
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec03.pdf
+        title: "Partitions; experiments, outcomes, events and sample spaces"
       - date: 2026-09-10
         day: "Thu"
         kind: lecture
@@ -227,7 +230,7 @@ schedule:
       id: HW9
       posted: 2026-11-20
       due: 2026-11-24
-      note: "Midterm 2 review. Midterm 2 covers only through Lecture 19 (joint distributions, covariance, correlation — Devore 3.5–5.2); the statistics in Lectures 20–21 is taught first but is not on it. No quiz — Midterm 2 week. HW9 is due Tuesday, not Friday — Thanksgiving recess begins Wed Nov 25."
+      note: "Midterm 2 review. Midterm 2 covers only through Lecture 19 (joint distributions, covariance and correlation); the statistics in Lectures 20–21 is taught first but is not on it. No quiz — Midterm 2 week. HW9 is due Tuesday, not Friday — Thanksgiving recess begins Wed Nov 25."
   - week: 13
     span: "Nov 23 – Nov 29"
     meetings:
