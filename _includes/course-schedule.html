@@ -94,7 +94,7 @@ between builds.
               {% if m.pending %}<span class="course-lec__pending">posted after class</span>
               {% else %}<span class="course-lec__title">{{ m.title }}</span>{% endif %}
               {% if m.notes %}<a class="course-lec__notes" href="{{ m.notes }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> notes</a>{% endif %}
-              {% if m.handwritten %}<a class="course-lec__notes" href="{{ m.handwritten }}"><i class="fas fa-pen" aria-hidden="true"></i> handwritten</a>{% endif %}
+              {% if m.handwritten %}<a class="course-lec__notes" href="{{ m.handwritten }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> pdf</a>{% endif %}
             {% else %}
               <span class="course-lec__title course-lec__title--{{ m.kind }}">{{ m.title }}</span>
             {% endif %}
