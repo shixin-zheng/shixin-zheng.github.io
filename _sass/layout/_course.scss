@@ -2,17 +2,30 @@
    COURSE PAGES — facts block, progress panel, schedule table
    ========================================================================== */
 
-.course {
+/* Tokens live at the root because the course components are not all inside .course:
+   the home-page banner and the /teaching/ index sit on their own.
+
+   Surfaces are translucent ink over whatever the page background is, rather than a
+   fixed near-white — the dark theme keeps --global-code-background-color at #fafafa
+   for code blocks, which pair it with a dark ink; a card borrowing it inherited the
+   white body text and disappeared. */
+:root {
   --course-accent: #{$info-color};
   --course-accent-soft: rgba(47, 127, 147, 0.08);
+  --course-on-accent: #fff;
   --course-warn: #{$warning-color};
   --course-warn-soft: rgba(248, 148, 6, 0.1);
+  --course-surface: rgba(0, 0, 0, 0.03);
+  --course-surface-strong: rgba(0, 0, 0, 0.06);
 }
 
-html[data-theme="dark"] .course {
+html[data-theme="dark"] {
   --course-accent: #4bb8d6;
   --course-accent-soft: rgba(75, 184, 214, 0.14);
+  --course-on-accent: #10303a;   /* the dark accent is bright; white on it is unreadable */
   --course-warn-soft: rgba(248, 148, 6, 0.16);
+  --course-surface: rgba(255, 255, 255, 0.07);
+  --course-surface-strong: rgba(255, 255, 255, 0.11);
 }
 
 .course__eyebrow {
@@ -55,7 +68,7 @@ html[data-theme="dark"] .course {
   padding: 1em 1.2em;
   border: 1px solid var(--global-border-color);
   border-radius: $border-radius;
-  background: var(--global-code-background-color);
+  background: var(--course-surface);
 
   @include breakpoint($medium) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -139,9 +152,10 @@ html[data-theme="dark"] .course {
 
 .btn--course {
   background-color: var(--course-accent);
-  color: #fff;
+  color: var(--course-on-accent);
 
-  &:visited { color: #fff; }
+  &:visited,
+  &:hover { color: var(--course-on-accent); }
 }
 
 /* ---------------------------------------------------------- schedule table */
@@ -166,7 +180,9 @@ html[data-theme="dark"] .course {
     padding: 0.6em 0.8em;
     border: 0;
     border-bottom: 1px solid var(--global-dark-border-color);
-    background: var(--global-thead-color);
+    /* Sticky, so it has to be opaque: the tint rides on the page background. */
+    background: linear-gradient(var(--course-surface-strong), var(--course-surface-strong)),
+                var(--global-bg-color);
     font-size: 0.78em;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -224,7 +240,7 @@ html[data-theme="dark"] .course {
   padding: 0.05em 0.45em;
   border-radius: 1em;
   background: var(--course-accent);
-  color: #fff;
+  color: var(--course-on-accent);
   font-size: 0.75em;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -457,7 +473,7 @@ html[data-theme="dark"] .course {
   margin-left: 0.6em;
   padding: 0.05em 0.5em;
   border-radius: 1em;
-  background: var(--global-thead-color);
+  background: var(--course-surface-strong);
   font-size: $type-size-7;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -466,20 +482,12 @@ html[data-theme="dark"] .course {
 /* ----------------------------------------------------------- home-page banner */
 
 .course-banner {
-  --course-accent: #{$info-color};
-  --course-accent-soft: rgba(47, 127, 147, 0.08);
-
   margin: 0 0 1.8em;
   padding: 0.9em 1.1em;
   border: 1px solid var(--global-border-color);
   border-left: 3px solid var(--course-accent);
   border-radius: $border-radius;
   background: var(--course-accent-soft);
-}
-
-html[data-theme="dark"] .course-banner {
-  --course-accent: #4bb8d6;
-  --course-accent-soft: rgba(75, 184, 214, 0.14);
 }
 
 .course-banner__row {
