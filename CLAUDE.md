@@ -64,10 +64,13 @@ would run the same script daily via launchd; it is deliberately **not installed*
 | `_layouts/course.html`, `_sass/layout/_course.scss` | page shell and styling |
 | `_teaching/<term>-<course>.md` | thin stub: `layout: course` + `course:` key into `_data/courses/` |
 
-A schedule row's `topic` may be left blank: it is then filled from the typed notes'
-`\lecture{n}{title}{sections}`, so revising a lecture title in `~/teaching` updates the
-published schedule too. That fallback is gated per course by `notes_numbering` in
-`courses.json` — only Fall 2026 follows the notes' own lecture numbering.
+A schedule row's `topic` may be left blank and filled from the typed notes'
+`\lecture{n}{title}{sections}`, gated per course by `notes_numbering` in `courses.json`.
+**No term currently uses it.** Fall 2026 turned it off on 2026-09-08: cancelling Sep 10
+shifted every later lecture number down by one, so a row's number no longer selects the
+same lecture in the notes. The instructor writes each topic into the CSV as the class is
+taught, which is what the published schedule shows. Turning the fallback back on requires
+the CSV's numbering and the notes' own to agree again.
 
 **Devore section numbers are never published** — not in a schedule row, not in a note. The
 typed notes' sections drifted out of step with what is actually taught, and a stale reading

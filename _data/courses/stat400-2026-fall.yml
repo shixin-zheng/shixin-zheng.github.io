@@ -55,9 +55,8 @@ schedule:
         title: "Partitions; experiments, outcomes, events and sample spaces"
       - date: 2026-09-10
         day: "Thu"
-        kind: lecture
-        lecture: 4
-        pending: true
+        kind: holiday
+        title: "No class"
     hw:
       id: HW1
       posted: 2026-09-11
@@ -69,12 +68,12 @@ schedule:
       - date: 2026-09-15
         day: "Tue"
         kind: lecture
-        lecture: 5
+        lecture: 4
         pending: true
       - date: 2026-09-17
         day: "Thu"
         kind: lecture
-        lecture: 6
+        lecture: 5
         pending: true
     hw:
       id: HW2
@@ -87,12 +86,12 @@ schedule:
       - date: 2026-09-22
         day: "Tue"
         kind: lecture
-        lecture: 7
+        lecture: 6
         pending: true
       - date: 2026-09-24
         day: "Thu"
         kind: lecture
-        lecture: 8
+        lecture: 7
         pending: true
     hw:
       id: HW3
@@ -105,12 +104,12 @@ schedule:
       - date: 2026-09-29
         day: "Tue"
         kind: lecture
-        lecture: 9
+        lecture: 8
         pending: true
       - date: 2026-10-01
         day: "Thu"
         kind: lecture
-        lecture: 10
+        lecture: 9
         pending: true
     hw:
       id: HW4
@@ -123,7 +122,7 @@ schedule:
       - date: 2026-10-06
         day: "Tue"
         kind: review
-        lecture: 11
+        lecture: 10
         title: "Review for Midterm 1"
       - date: 2026-10-08
         day: "Thu"
@@ -139,7 +138,7 @@ schedule:
       - date: 2026-10-15
         day: "Thu"
         kind: lecture
-        lecture: 12
+        lecture: 11
         pending: true
     hw:
       id: HW5
@@ -152,12 +151,12 @@ schedule:
       - date: 2026-10-20
         day: "Tue"
         kind: lecture
-        lecture: 13
+        lecture: 12
         pending: true
       - date: 2026-10-22
         day: "Thu"
         kind: lecture
-        lecture: 14
+        lecture: 13
         pending: true
     hw:
       id: HW6
@@ -170,12 +169,12 @@ schedule:
       - date: 2026-10-27
         day: "Tue"
         kind: lecture
-        lecture: 15
+        lecture: 14
         pending: true
       - date: 2026-10-29
         day: "Thu"
         kind: lecture
-        lecture: 16
+        lecture: 15
         pending: true
     hw:
       id: HW7
@@ -188,12 +187,12 @@ schedule:
       - date: 2026-11-03
         day: "Tue"
         kind: lecture
-        lecture: 18
+        lecture: 17
         pending: true
       - date: 2026-11-05
         day: "Thu"
         kind: lecture
-        lecture: 19
+        lecture: 18
         pending: true
     quiz: "Quiz 6 · in discussion"
   - week: 11
@@ -202,12 +201,12 @@ schedule:
       - date: 2026-11-10
         day: "Tue"
         kind: lecture
-        lecture: 20
+        lecture: 19
         pending: true
       - date: 2026-11-12
         day: "Thu"
         kind: lecture
-        lecture: 21
+        lecture: 20
         pending: true
     hw:
       id: HW8
@@ -220,7 +219,7 @@ schedule:
       - date: 2026-11-17
         day: "Tue"
         kind: review
-        lecture: 17
+        lecture: 16
         title: "Review for Midterm 2"
       - date: 2026-11-19
         day: "Thu"
@@ -230,14 +229,14 @@ schedule:
       id: HW9
       posted: 2026-11-20
       due: 2026-11-24
-      note: "Midterm 2 review. Midterm 2 covers only through Lecture 19 (joint distributions, covariance and correlation); the statistics in Lectures 20–21 is taught first but is not on it. No quiz — Midterm 2 week. HW9 is due Tuesday, not Friday — Thanksgiving recess begins Wed Nov 25."
+      note: "Midterm 2 review. Midterm 2 covers only through Lecture 18 (joint distributions, covariance and correlation); the statistics in Lectures 19–20 is taught first but is not on it. No quiz — Midterm 2 week. HW9 is due Tuesday, not Friday — Thanksgiving recess begins Wed Nov 25."
   - week: 13
     span: "Nov 23 – Nov 29"
     meetings:
       - date: 2026-11-24
         day: "Tue"
         kind: lecture
-        lecture: 22
+        lecture: 21
         pending: true
         note: "Remote class — no in-person meeting; recorded lecture posted to ELMS. Monday 11/23 discussion meets as usual."
       - date: 2026-11-26
@@ -251,12 +250,12 @@ schedule:
       - date: 2026-12-01
         day: "Tue"
         kind: lecture
-        lecture: 23
+        lecture: 22
         pending: true
       - date: 2026-12-03
         day: "Thu"
         kind: lecture
-        lecture: 24
+        lecture: 23
         pending: true
     hw:
       id: HW10
@@ -269,12 +268,12 @@ schedule:
       - date: 2026-12-08
         day: "Tue"
         kind: lecture
-        lecture: 25
+        lecture: 24
         pending: true
       - date: 2026-12-10
         day: "Thu"
         kind: review
-        lecture: 26
+        lecture: 25
         title: "Review for the Final Exam"
     quiz: "Quiz 10 · in discussion"
   - week: 16

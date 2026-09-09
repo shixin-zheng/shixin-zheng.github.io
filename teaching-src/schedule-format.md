@@ -44,8 +44,10 @@ week,date,kind,lecture,topic,reading,hw,hw_posted,hw_due,quiz,note
 - A review class is `kind=review`, not `exam` — reviews count as lectures in the progress
   bar, exams do not.
 - The topic fallback only applies where the course follows the typed notes' own lecture
-  numbering (currently Fall 2026 only; the flag is `notes_numbering` in
-  `teaching-src/courses.json`). For any other term, write topics out in the CSV.
+  numbering (the flag is `notes_numbering` in `teaching-src/courses.json`). **No term uses
+  it at the moment** — Fall 2026's numbers were shifted by the Sep 10 cancellation and no
+  longer line up with the notes — so write the topic out in the CSV as each class is
+  taught. A `review` row needs its topic written for the same reason.
 - A course marked `topics_as_taught` publishes a lecture's topic only once that class has
   been taught — before then the row shows the lecture number and "posted after class",
   whatever this file says. Exams, breaks and `review` sessions are announced ahead of time

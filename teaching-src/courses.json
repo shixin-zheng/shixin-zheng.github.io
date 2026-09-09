@@ -27,7 +27,7 @@
       "notes_pdf": "/files/stat400/notes/stat400-lecture-notes.pdf",
       "notes_pages": 109
     },
-    "notes_numbering": true,
+    "notes_numbering": false,
     "handwritten_src": "courses/STAT400/lectures/2026-fall/pdf",
     "handwritten_dir": "/files/stat400/2026-fall/handwritten"
   },
