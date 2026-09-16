@@ -10,7 +10,7 @@ redirect_from:
 
 {% include base_path %}
 
-**[Download CV (PDF)](/files/CV_Shixin_Zheng.pdf)** — last updated August 2026.
+**[Download CV (PDF)](/files/CV_Shixin_Zheng.pdf)** — last updated September 2026.
 
 Education
 ======

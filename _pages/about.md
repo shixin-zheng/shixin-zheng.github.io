@@ -45,18 +45,11 @@ My research interests lie in computational optimization, with a focus on both th
 
 **Preprints**
 
-3. **S. Zheng**, Y. Wang, and H. Yang. *Global Convergence and Error Propagation in Neural Gradient Flows: A Riemannian Optimization Framework.*  
+3. J. Li, **S. Zheng**, and X. Zhang. *Global convergence of an efficient splitting method for the defocusing Gross–Pitaevskii ground state problem.*  
+   [arXiv:2609.13509](https://arxiv.org/abs/2609.13509), 2026.
+
+4. **S. Zheng**, Y. Wang, and H. Yang. *Global Convergence and Error Propagation in Neural Gradient Flows: A Riemannian Optimization Framework.*  
    [arXiv:2605.27779](https://arxiv.org/abs/2605.27779), 2026. Under review.
 
-4. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin Monte Carlo schemes for sampling PSD matrices with fixed rank.*  
+5. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin Monte Carlo schemes for sampling PSD matrices with fixed rank.*  
    [arXiv:2309.04072](https://arxiv.org/abs/2309.04072), 2023.
-
-**In preparation**
-
-5. **S. Zheng**, X. Zhang, and R. Y. Zhang. *Preconditioned gradient descent for asymmetric low-rank recovery beyond restricted isometry.*
-
-6. **S. Zheng**, J. Lu, and X. Zhang. *On the local convergence of fully discretized Riemannian gradient flow for the Gross–Pitaevskii eigenvalue problem.*
-
-7. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin equations for PSD matrices of fixed rank.*
-
-8. J. Li, **S. Zheng**, and X. Zhang. *Global Convergence of an Efficient Splitting Method for the Defocusing Gross–Pitaevskii Ground State Problem.*
