@@ -29,6 +29,8 @@
     "courses/STAT400/lectures/2026-fall/pdf/Week1-Lec1.pdf": "1a466d2e4c8c1d604abe57074dc25da0925834a84de22da90994964bcfde55cf",
     "courses/STAT400/lectures/2026-fall/pdf/Week1-Lec2.pdf": "188b28605fcf6911985965a33145e087687050e775404e7a17ee3f40c06bb570",
     "courses/STAT400/lectures/2026-fall/pdf/Week2-Lec3.pdf": "5556dfc0b34456522287e1b003d89486e7d4324625ca29eee92c4c5b3f5ce6b2",
+    "courses/STAT400/lectures/2026-fall/pdf/Week3-Lec4.pdf": "99be4dbf88b233308b0fe35c0151e33945f39d75f2808dc07722c6bf91b2fdaf",
+    "courses/STAT400/lectures/2026-fall/pdf/Week3-Lec5.pdf": "32c645aae2b08b04b850e98473272037f0c4658abb77f39029e36731db3f92ca",
     "courses/STAT400/lectures/2026-spring/pdf/Lec1.pdf": "156256151b45f276d2b37b27da1e5666c1ae7814790ad9f1ab0501f43cd511a2",
     "courses/STAT400/lectures/2026-spring/pdf/Lec10.pdf": "326c0cb2a4e47edf595d6a3e0220d51b14501d6655a2b2bbc583d0595e06e7f3",
     "courses/STAT400/lectures/2026-spring/pdf/Lec12.pdf": "a3dd450dd5d00e32b638ba000fc653ffd9f4b0f67cdc69dfc1b4b1674461d92c",
@@ -53,7 +55,7 @@
     "courses/STAT400/lectures/2026-spring/pdf/Lec9.pdf": "41243b43a01265d4e7be214fe357fa8f03c02f1ebe66c895fdb10d1d02eed9ab"
   },
   "schedule": {
-    "courses/STAT400/syllabus/2026-fall/schedule.csv": "c9cf2203c63e7e7397d75b5c550b235450dbd98ea46071f03fa4f572f734bab3"
+    "courses/STAT400/syllabus/2026-fall/schedule.csv": "ec157e43801e4570ae0e1df4c20c03bd50879b2e7e4b0cdb4a6f7b1fc892632e"
   },
   "syllabus": {
     "courses/STAT400/syllabus/2025-fall/Syllabus STAT400 25Fall.pdf": "5ede0262cc150dafc461f5bd6ead2ec558d54f65c6cf0611d0a54859a90e656b",

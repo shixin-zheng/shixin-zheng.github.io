@@ -69,12 +69,14 @@ schedule:
         day: "Tue"
         kind: lecture
         lecture: 4
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec04.pdf
+        title: "Permutations and combinations; the four selection cases; balls-and-bars; poker hands"
       - date: 2026-09-17
         day: "Thu"
         kind: lecture
         lecture: 5
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec05.pdf
+        title: "Geometric probability: Buffon's needle and Bertrand's paradox; the modern definition, event fields and the axioms"
     hw:
       id: HW2
       posted: 2026-09-18
