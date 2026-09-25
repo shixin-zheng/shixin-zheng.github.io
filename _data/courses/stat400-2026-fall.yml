@@ -89,12 +89,14 @@ schedule:
         day: "Tue"
         kind: lecture
         lecture: 6
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec06.pdf
+        title: "Conditional probability; the multiplication rule and Polya's urn; independence, pairwise vs mutual"
       - date: 2026-09-24
         day: "Thu"
         kind: lecture
         lecture: 7
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec07.pdf
+        title: "The law of total probability and Bayes' theorem: prior, likelihood, posterior; random variables introduced"
     hw:
       id: HW3
       posted: 2026-09-25
