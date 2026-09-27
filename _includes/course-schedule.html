@@ -40,7 +40,7 @@ between builds.
   <p class="course-notes-link">
     <a class="btn btn--course" href="{{ c.notes_pdf }}">
       <i class="fas fa-file-pdf" aria-hidden="true"></i>
-      Lecture notes, complete volume{% if c.notes_pages %} ({{ c.notes_pages }} pp.){% endif %}
+      Lecture notes, complete volume{% if c.notes_updated %} (updated {{ c.notes_updated | date: '%b %-d, %Y' }}){% endif %}
     </a>
   </p>
   {% endif %}

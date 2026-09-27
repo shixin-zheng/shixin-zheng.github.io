@@ -18,6 +18,9 @@ A course whose meta carries `topics_as_taught` publishes a lecture's topic only 
 class has been taught; until then the row shows the lecture number alone. Its output
 therefore depends on the day it is generated — SCHEDULE_TODAY overrides that.
 
+A course whose meta names a `notes_pdf` also gets `notes_updated`, the date that PDF
+last changed, which the course page shows next to the notes link.
+
     ./teaching-src/gen_courses.py            # rebuild every course
     ./teaching-src/gen_courses.py stat400-2026-fall
 """
@@ -29,6 +32,7 @@ import json
 import os
 import pathlib
 import re
+import subprocess
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
@@ -56,6 +60,24 @@ def typed_lectures() -> dict[int, str]:
         if m:
             found[int(m.group(1))] = m.group(2)
     return found
+
+
+def notes_updated(pdf: str) -> str | None:
+    """The date the published notes PDF last changed. sync.py rebuilds the PDF before it
+    commits, so an uncommitted change means today; otherwise it is the date of the last
+    commit that touched the file. The build pins SOURCE_DATE_EPOCH, so a rebuild with
+    unchanged content is byte-identical and never shows up as a change."""
+    path = REPO / pdf.lstrip("/")
+    if not path.exists():
+        return None
+    git = ["git", "-C", str(REPO)]
+    dirty = subprocess.run([*git, "status", "--porcelain", "--", str(path)],
+                           capture_output=True, text=True).stdout.strip()
+    if dirty:
+        return today().isoformat()
+    last = subprocess.run([*git, "log", "-1", "--format=%cs", "--", str(path)],
+                          capture_output=True, text=True).stdout.strip()
+    return last or None
 
 
 def q(s: str) -> str:
@@ -110,7 +132,11 @@ def build(key: str, spec: dict, lectures: dict[int, tuple[str, str]]) -> pathlib
             weeks.append((w, []))
         weeks[-1][1].append(r)
 
-    meta = spec["meta"]
+    meta = dict(spec["meta"])
+    if meta.get("notes_pdf"):
+        updated = notes_updated(meta["notes_pdf"])
+        if updated:
+            meta["notes_updated"] = updated
     # Topics as taught: a lecture still to come is published without its title or
     # reading, whatever the CSV and the typed notes say. Regenerating on a later day
     # is what puts them up, so this output is only as current as the last sync.
