@@ -109,12 +109,14 @@ schedule:
         day: "Tue"
         kind: lecture
         lecture: 8
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec08.pdf
+        title: "The pmf and the cdf, and recovering one from the other (the largest of three dice); expected value, and a distribution whose mean is infinite; functions of a random variable and E[aX+b]"
       - date: 2026-10-01
         day: "Thu"
         kind: lecture
         lecture: 9
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec09.pdf
+        title: "Linearity of expectation and indicators (runs in a shuffled deck); the tail-sum formula; variance and its computational formula; independent trials; the binomial and geometric distributions"
     hw:
       id: HW4
       posted: 2026-10-02
@@ -128,6 +130,7 @@ schedule:
         kind: review
         lecture: 10
         title: "Review for Midterm 1"
+        note: "Midterm 1 covers everything taught through Lecture 9 (Oct 1). No quiz this week: the Monday Oct 5 discussion is an open Q&A session for the midterm."
       - date: 2026-10-08
         day: "Thu"
         kind: exam
