@@ -151,9 +151,9 @@ schedule:
         title: "The hypergeometric distribution and when it is close to the binomial; the negative binomial distribution; the Poisson distribution as a limit of the binomial; the Poisson process and thinning; a map of the discrete families"
     hw:
       id: HW5
-      posted: 2026-10-16
-      due: 2026-10-23
-      note: "No discussion this week — Monday Oct 12 is Fall Break. No quiz."
+      posted: 2026-10-17
+      due: 2026-10-24
+      note: "No discussion this week — Monday Oct 12 is Fall Break. No quiz. HW5 went out a day late, so it is due Saturday, Oct 24."
   - week: 8
     span: "Oct 19 – Oct 25"
     meetings:
