@@ -45,11 +45,14 @@ My research interests lie in computational optimization, with a focus on both th
 
 **Preprints**
 
-3. J. Li, **S. Zheng**, and X. Zhang. *Global convergence of an efficient splitting method for the defocusing Gross–Pitaevskii ground state problem.*  
+3. **S. Zheng** and X. Zhang. *Riemannian Hessian analysis of Sobolev gradient flows for the Gross–Pitaevskii ground state problem.*  
+   [arXiv:2610.12833](https://arxiv.org/abs/2610.12833), 2026.
+
+4. J. Li, **S. Zheng**, and X. Zhang. *Global convergence of an efficient splitting method for the defocusing Gross–Pitaevskii ground state problem.*  
    [arXiv:2609.13509](https://arxiv.org/abs/2609.13509), 2026.
 
-4. **S. Zheng**, Y. Wang, and H. Yang. *Global Convergence and Error Propagation in Neural Gradient Flows: A Riemannian Optimization Framework.*  
+5. **S. Zheng**, Y. Wang, and H. Yang. *Global Convergence and Error Propagation in Neural Gradient Flows: A Riemannian Optimization Framework.*  
    [arXiv:2605.27779](https://arxiv.org/abs/2605.27779), 2026. Under review.
 
-5. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin Monte Carlo schemes for sampling PSD matrices with fixed rank.*  
+6. T. Yu, **S. Zheng**, J. Lu, G. Menon, and X. Zhang. *Riemannian Langevin Monte Carlo schemes for sampling PSD matrices with fixed rank.*  
    [arXiv:2309.04072](https://arxiv.org/abs/2309.04072), 2023.
