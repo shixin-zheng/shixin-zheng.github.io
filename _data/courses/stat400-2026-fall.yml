@@ -129,7 +129,8 @@ schedule:
         day: "Tue"
         kind: review
         lecture: 10
-        title: "Review for Midterm 1"
+        handwritten: /files/stat400/2026-fall/handwritten/lec10.pdf
+        title: "Review for Midterm 1: the pmf and cdf of a discrete random variable, and the four counting cases"
         note: "Midterm 1 covers everything taught through Lecture 9 (Oct 1). No quiz this week: the Monday Oct 5 discussion is an open Q&A session for the midterm."
       - date: 2026-10-08
         day: "Thu"
@@ -146,7 +147,8 @@ schedule:
         day: "Thu"
         kind: lecture
         lecture: 11
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec11.pdf
+        title: "The hypergeometric distribution and when it is close to the binomial; the negative binomial distribution; the Poisson distribution as a limit of the binomial; the Poisson process and thinning; a map of the discrete families"
     hw:
       id: HW5
       posted: 2026-10-16
