@@ -161,12 +161,14 @@ schedule:
         day: "Tue"
         kind: lecture
         lecture: 12
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec12.pdf
+        title: "Continuous random variables: why there is no pmf, the probability density function, the cdf and percentiles; expected value, variance and the tail formula; the uniform distribution; the largest and smallest of n uniforms"
       - date: 2026-10-22
         day: "Thu"
         kind: lecture
         lecture: 13
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec13.pdf
+        title: "The normal distribution: standardization, the z-table and normal percentiles; the empirical rule; the normal approximation to the binomial with continuity correction; change of variable, and the square of a standard normal"
     hw:
       id: HW6
       posted: 2026-10-23
