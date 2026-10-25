@@ -171,8 +171,9 @@ schedule:
         title: "The normal distribution: standardization, the z-table and normal percentiles; the empirical rule; the normal approximation to the binomial with continuity correction; change of variable, and the square of a standard normal"
     hw:
       id: HW6
-      posted: 2026-10-23
-      due: 2026-10-30
+      posted: 2026-10-25
+      due: 2026-11-01
+      note: "HW6 went out two days late, so it is due Sunday, Nov 1."
     quiz: "Quiz 4 · in discussion"
   - week: 9
     span: "Oct 26 – Nov 1"
