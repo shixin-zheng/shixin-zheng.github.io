@@ -182,12 +182,14 @@ schedule:
         day: "Tue"
         kind: lecture
         lecture: 14
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec14.pdf
+        title: "The exponential distribution as the waiting time in a Poisson process, and memorylessness; waiting for the bus; the first of two bulbs to fail; the gamma function and the gamma distribution as the wait for the alpha-th arrival"
       - date: 2026-10-29
         day: "Thu"
         kind: lecture
         lecture: 15
-        pending: true
+        handwritten: /files/stat400/2026-fall/handwritten/lec15.pdf
+        title: "Gamma scaling and additivity; the chi-square distribution as a sum of squared normals; the Weibull distribution, which is not memoryless; the lognormal distribution and multiplicative growth; the beta distribution, and the k-th smallest of n uniforms"
     hw:
       id: HW7
       posted: 2026-10-30
