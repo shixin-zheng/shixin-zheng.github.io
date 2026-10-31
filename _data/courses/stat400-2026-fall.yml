@@ -193,7 +193,8 @@ schedule:
     hw:
       id: HW7
       posted: 2026-10-30
-      due: 2026-11-06
+      due: 2026-11-07
+      note: "HW7 is due Saturday, Nov 7."
     quiz: "Quiz 5 · in discussion"
   - week: 10
     span: "Nov 2 – Nov 8"
