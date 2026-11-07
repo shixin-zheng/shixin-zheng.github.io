@@ -202,13 +202,15 @@ schedule:
       - date: 2026-11-03
         day: "Tue"
         kind: lecture
-        lecture: 17
-        pending: true
+        lecture: 16
+        handwritten: /files/stat400/2026-fall/handwritten/lec16.pdf
+        title: "Why the k-th smallest of n uniforms is beta, argued two ways; a recap of the continuous families; joint distributions: the joint pmf and its marginals (choosing insurance deductibles), the joint pdf and its marginals, and probabilities as double integrals over a region (the can of nuts)"
       - date: 2026-11-05
         day: "Thu"
         kind: lecture
-        lecture: 18
-        pending: true
+        lecture: 17
+        handwritten: /files/stat400/2026-fall/handwritten/lec17.pdf
+        title: "Independent random variables, whose joint pmf or pdf factors; the largest and the smallest of n independent random variables; conditional distributions (the can of nuts, given the almonds); the expected value of a function of two random variables (five seats in a row, the cost of a can of nuts)"
     quiz: "Quiz 6 · in discussion"
   - week: 11
     span: "Nov 9 – Nov 15"
@@ -216,12 +218,12 @@ schedule:
       - date: 2026-11-10
         day: "Tue"
         kind: lecture
-        lecture: 19
+        lecture: 18
         pending: true
       - date: 2026-11-12
         day: "Thu"
         kind: lecture
-        lecture: 20
+        lecture: 19
         pending: true
     hw:
       id: HW8
@@ -234,7 +236,7 @@ schedule:
       - date: 2026-11-17
         day: "Tue"
         kind: review
-        lecture: 16
+        lecture: 20
         title: "Review for Midterm 2"
       - date: 2026-11-19
         day: "Thu"
@@ -244,7 +246,7 @@ schedule:
       id: HW9
       posted: 2026-11-20
       due: 2026-11-24
-      note: "Midterm 2 review. Midterm 2 covers only through Lecture 18 (joint distributions, covariance and correlation); the statistics in Lectures 19–20 is taught first but is not on it. No quiz — Midterm 2 week. HW9 is due Tuesday, not Friday — Thanksgiving recess begins Wed Nov 25."
+      note: "Midterm 2 review. Midterm 2 covers material only through joint distributions, covariance and correlation; any statistics taught before the exam is not on it. No quiz — Midterm 2 week. HW9 is due Tuesday, not Friday — Thanksgiving recess begins Wed Nov 25."
   - week: 13
     span: "Nov 23 – Nov 29"
     meetings:
