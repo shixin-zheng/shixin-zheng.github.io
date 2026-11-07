@@ -25,6 +25,7 @@ elms: "https://elms.umd.edu"
 first_day: "2026-08-31"
 last_day: "2026-12-11"
 finals: "2026-12-14 – 2026-12-21"
+final_exam: "Monday, December 21, 1:30–3:30 pm, ESJ 0202 (our usual classroom)"
 textbook: "Devore, <em>Probability and Statistics for Engineering and the Sciences</em>, 9th ed."
 notes_pdf: "/files/stat400/notes/stat400-lecture-notes.pdf"
 notes_updated: "2026-09-27"
@@ -211,6 +212,11 @@ schedule:
         lecture: 17
         handwritten: /files/stat400/2026-fall/handwritten/lec17.pdf
         title: "Independent random variables, whose joint pmf or pdf factors; the largest and the smallest of n independent random variables; conditional distributions (the can of nuts, given the almonds); the expected value of a function of two random variables (five seats in a row, the cost of a can of nuts)"
+    hw:
+      id: HW8
+      posted: 2026-11-07
+      due: 2026-11-14
+      note: "Moved up a week, so that nothing is due in Midterm 2 week. It went out on Saturday, so it is due Saturday, Nov 14."
     quiz: "Quiz 6 · in discussion"
   - week: 11
     span: "Nov 9 – Nov 15"
@@ -225,10 +231,6 @@ schedule:
         kind: lecture
         lecture: 19
         pending: true
-    hw:
-      id: HW8
-      posted: 2026-11-13
-      due: 2026-11-20
     quiz: "Quiz 7 · in discussion"
   - week: 12
     span: "Nov 16 – Nov 22"
@@ -242,11 +244,12 @@ schedule:
         day: "Thu"
         kind: exam
         title: "Midterm 2"
+        note: "In class. Covers material only through joint distributions, covariance and correlation; any statistics taught before the exam is not on it."
     hw:
       id: HW9
       posted: 2026-11-20
-      due: 2026-11-24
-      note: "Midterm 2 review. Midterm 2 covers material only through joint distributions, covariance and correlation; any statistics taught before the exam is not on it. No quiz — Midterm 2 week. HW9 is due Tuesday, not Friday — Thanksgiving recess begins Wed Nov 25."
+      due: 2026-12-04
+      note: "Due in two weeks, because of Thanksgiving. No quiz this week."
   - week: 13
     span: "Nov 23 – Nov 29"
     meetings:
@@ -259,7 +262,7 @@ schedule:
       - date: 2026-11-26
         day: "Thu"
         kind: holiday
-        title: "Thanksgiving — no class"
+        title: "Thanksgiving break — no class"
     quiz: "Quiz 8 · in discussion"
   - week: 14
     span: "Nov 30 – Dec 6"
@@ -300,4 +303,4 @@ schedule:
         day: "Mon"
         kind: final
         title: "Final Exam"
-        note: "Monday, December 21, 1:30–3:30pm. Cumulative."
+        note: "1:30–3:30 pm in ESJ 0202, our usual classroom. Cumulative."
