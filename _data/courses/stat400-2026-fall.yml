@@ -294,10 +294,10 @@ schedule:
         title: "Review for the Final Exam"
     quiz: "Quiz 10 · in discussion"
   - week: 16
-    span: "Dec 14 – Dec 20"
+    span: "Dec 21 – Dec 27"
     meetings:
-      - date: 2026-12-14
+      - date: 2026-12-21
         day: "Mon"
         kind: final
         title: "Final Exam"
-        note: "Day and time are assigned by the Registrar; the exam period runs Dec 14–21."
+        note: "Monday, December 21, 1:30–3:30pm. Cumulative."
