@@ -29,6 +29,7 @@ between builds.
   <dl class="course-facts">
     {% if c.meetings %}<div><dt>Lectures</dt><dd>{{ c.meetings }}{% if c.room and c.room != 'TBD' %}, {{ c.room }}{% endif %}</dd></div>{% endif %}
     {% if c.discussion %}<div><dt>Discussion</dt><dd>{{ c.discussion }}</dd></div>{% endif %}
+    {% if c.final_exam %}<div><dt>Final exam</dt><dd>{{ c.final_exam }}</dd></div>{% endif %}
     {% if c.sections %}<div><dt>Sections</dt><dd>{{ c.sections }}</dd></div>{% endif %}
     {% if c.office_hours %}<div><dt>Office hours</dt><dd>{{ c.office_hours }}{% if c.office %} &middot; {{ c.office }}{% endif %}</dd></div>{% endif %}
     {% if c.ta %}<div><dt>Teaching assistants</dt><dd>{{ c.ta }}</dd></div>{% endif %}
@@ -70,6 +71,9 @@ between builds.
       <tbody>
       {% for w in c.schedule %}
         {% assign rows = w.meetings | size %}
+        {% comment %} A week with no class meeting (an exam-only week) shows nothing in the homework cell. {% endcomment %}
+        {% assign n_lec = w.meetings | where: "kind", "lecture" | size %}
+        {% assign n_rev = w.meetings | where: "kind", "review" | size %}
         {% for m in w.meetings %}
         <tr class="course-row course-row--{{ m.kind }}"
             data-date="{{ m.date | date: '%Y-%m-%d' }}"
@@ -111,8 +115,9 @@ between builds.
               </span>
               {% if w.hw.note %}<span class="course-hw__note">{{ w.hw.note }}</span>{% endif %}
               <span class="course-hw__flag" hidden></span>
-            {% else %}
-              <span class="course-dash">no homework</span>
+            {% elsif n_lec > 0 or n_rev > 0 %}
+              {% comment %} "new": an assignment posted the week before is usually still open. {% endcomment %}
+              <span class="course-dash">no new homework</span>
             {% endif %}
             {% if w.quiz %}<span class="course-hw__quiz">{{ w.quiz }}</span>{% endif %}
           </td>
@@ -126,7 +131,7 @@ between builds.
 
   <p class="course__footnote">
     {% if c.first_day %}Classes {{ c.first_day | date: '%B %-d' }} &ndash; {{ c.last_day | date: '%B %-d, %Y' }}.{% endif %}
-    {% if c.finals %} Final exam period {{ c.finals }}.{% endif %}
+    {% if c.final_exam %} Final exam {{ c.final_exam }}.{% elsif c.finals %} Final exam period {{ c.finals }}.{% endif %}
   </p>
 </div>
 
