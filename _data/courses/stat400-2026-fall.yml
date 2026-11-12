@@ -225,12 +225,12 @@ schedule:
         day: "Tue"
         kind: lecture
         lecture: 18
-        pending: true
+        title: "Lecture"
       - date: 2026-11-12
         day: "Thu"
         kind: lecture
         lecture: 19
-        pending: true
+        title: "Lecture"
     quiz: "Quiz 7 · in discussion"
   - week: 12
     span: "Nov 16 – Nov 22"
@@ -244,7 +244,7 @@ schedule:
         day: "Thu"
         kind: exam
         title: "Midterm 2"
-        note: "In class. Covers material only through joint distributions, covariance and correlation; any statistics taught before the exam is not on it."
+        note: "In class. Covers Lectures 11–19 (Oct 15 – Nov 12): everything taught after Midterm 1."
     hw:
       id: HW9
       posted: 2026-11-20
