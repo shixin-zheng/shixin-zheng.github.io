@@ -244,7 +244,7 @@ schedule:
         day: "Thu"
         kind: exam
         title: "Midterm 2"
-        note: "In class. Covers Lectures 11–19 (Oct 15 – Nov 12): everything taught after Midterm 1."
+        note: "In class. Covers Lectures 11–19 (Oct 15 – Nov 12), everything taught after Midterm 1; any statistics taught before the exam is not on it."
     hw:
       id: HW9
       posted: 2026-11-20
