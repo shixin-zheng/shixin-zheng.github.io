@@ -225,12 +225,14 @@ schedule:
         day: "Tue"
         kind: lecture
         lecture: 18
-        title: "Lecture"
+        handwritten: /files/stat400/2026-fall/handwritten/lec18.pdf
+        title: "Conditional expectation (the expected cost of the peanuts in a can of nuts, given the almonds); the expected number of tosses until two heads in a row, by conditioning on the first tosses; covariance and what its sign says; independence gives zero covariance, but not conversely (X and X squared); the computational formula and the covariance in the can of nuts; how covariance changes with units, and the correlation coefficient"
       - date: 2026-11-12
         day: "Thu"
         kind: lecture
         lecture: 19
-        title: "Lecture"
+        handwritten: /files/stat400/2026-fall/handwritten/lec19.pdf
+        title: "Correlation: its range, the value ±1 exactly for linear relations, and zero correlation as no linear dependence; the slope of the regression line; correlation as the cosine of an angle; from probability to statistics: samples, sample data and statistics; the sample mean and the sample variance, and why it divides by n − 1; what the distribution of a statistic depends on; random samples"
     quiz: "Quiz 7 · in discussion"
   - week: 12
     span: "Nov 16 – Nov 22"
