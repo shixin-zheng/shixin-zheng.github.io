@@ -260,12 +260,11 @@ schedule:
         kind: lecture
         lecture: 21
         pending: true
-        note: "Remote class — no in-person meeting; recorded lecture posted to ELMS. Monday 11/23 discussion meets as usual."
+        note: "Remote class — no in-person meeting; recorded lecture posted to ELMS. No quiz this week: the Monday 11/23 quiz is canceled. Discussion meets as usual."
       - date: 2026-11-26
         day: "Thu"
         kind: holiday
         title: "Thanksgiving break — no class"
-    quiz: "Quiz 8 · in discussion"
   - week: 14
     span: "Nov 30 – Dec 6"
     meetings:
