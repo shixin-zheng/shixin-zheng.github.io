@@ -259,8 +259,9 @@ schedule:
         day: "Tue"
         kind: lecture
         lecture: 21
-        pending: true
-        note: "Remote class — no in-person meeting; recorded lecture posted to ELMS. No quiz this week: the Monday 11/23 quiz is canceled. Discussion meets as usual."
+        handwritten: /files/stat400/2026-fall/handwritten/lec21.pdf
+        title: "How to find the distribution of a statistic: closed form (the cdf of the average of two uniforms, as an area in the square), numerical simulation (the average of ten uniforms, simulated 100,000 times), and the Central Limit Theorem; the CLT for the sample mean, for the sum and in standardized form, and the sample mean as an estimator of the mean; battery lifetimes (one battery versus the average of 36); why the binomial is approximately normal"
+        note: "Remote class — no in-person meeting; the recorded lecture is on ELMS, under Panopto Recordings. No quiz this week: the Monday 11/23 quiz is canceled. Discussion meets as usual."
       - date: 2026-11-26
         day: "Thu"
         kind: holiday
